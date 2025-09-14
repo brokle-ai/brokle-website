@@ -1,3 +1,5 @@
+'use client'
+
 import React, { createContext, useContext, ReactNode } from 'react';
 import { useCookieConsent } from '@/hooks/use-cookie-consent';
 import type { CookiePreferences } from '@/components/cookie-consent';

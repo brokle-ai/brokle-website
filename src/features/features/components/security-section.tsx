@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Link } from "@tanstack/react-router"
+import Link from "next/link"
 import { ArrowRight, FileText, Lock, Shield, Users } from "lucide-react"
 
 export function SecuritySection() {

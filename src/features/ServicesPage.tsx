@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import Link from "next/link"
 import { Button } from '@/components/ui/button'
 import { 
   Card, 
@@ -219,7 +219,7 @@ export default function ServicesPage() {
           <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
             Ready to start your next project? Contact us today for a free consultation and quote.
           </p>
-          <Link to="/contact">
+          <Link href="/contact">
             <Button size="lg">Get in Touch</Button>
           </Link>
         </div>

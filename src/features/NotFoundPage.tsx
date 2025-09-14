@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import Link from "next/link"
 import { Button } from '@/components/ui/button'
 
 export default function NotFoundPage() {
@@ -11,10 +11,10 @@ export default function NotFoundPage() {
         Don't worry, you can find plenty of other things on our homepage.
       </p>
       <div className="space-x-4">
-        <Link to="/">
+        <Link href="/">
           <Button size="lg">Back to Home</Button>
         </Link>
-        <Link to="/contact">
+        <Link href="/contact">
           <Button variant="outline" size="lg">Contact Us</Button>
         </Link>
       </div>

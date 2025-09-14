@@ -1,4 +1,6 @@
-import { Link } from '@tanstack/react-router'
+'use client'
+
+import Link from 'next/link'
 import { useState, useEffect } from "react"
 import { Menu, Plus, Globe, Users } from "lucide-react"
 import { Button } from '@/components/ui/button'
@@ -43,7 +45,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <div className="bg-primary rounded-lg p-1.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +105,7 @@ export default function Navbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/pricing" className={navigationMenuTriggerStyle()}>
+                  <Link href="/pricing" className={navigationMenuTriggerStyle()}>
                     Pricing
                   </Link>
                 </NavigationMenuItem>
@@ -176,7 +178,7 @@ export default function Navbar() {
               <SheetContent side="right" className="w-full sm:w-80">
                 <div className="flex flex-col h-full">
                   <div className="px-2 py-6">
-                    <Link to="/" className="flex items-center space-x-2">
+                    <Link href="/" className="flex items-center space-x-2">
                       <div className="bg-primary rounded-lg p-1.5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -206,20 +208,20 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="flex flex-col space-y-2 px-2 py-1">
-                          <Link to="/features" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/features" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Features
                           </Link>
-                          <Link to="/solutions" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/solutions" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Solutions
                           </Link>
-                          <Link to="/enterprise" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/enterprise" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Enterprise
                           </Link>
                         </div>
                       </AccordionContent>
                     </AccordionItem>
                     
-                    <Link to="/pricing" className="flex items-center px-4 py-3 text-sm font-medium hover:bg-muted rounded-md transition-colors">
+                    <Link href="/pricing" className="flex items-center px-4 py-3 text-sm font-medium hover:bg-muted rounded-md transition-colors">
                       Pricing
                     </Link>
                     
@@ -232,16 +234,16 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="flex flex-col space-y-2 px-2 py-1">
-                          <Link to="/documentation" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/documentation" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Documentation
                           </Link>
-                          <Link to="/blog" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/blog" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Blog
                           </Link>
-                          <Link to="/community" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/community" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Community
                           </Link>
-                          <Link to="/support" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/support" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Support
                           </Link>
                         </div>
@@ -257,13 +259,13 @@ export default function Navbar() {
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="flex flex-col space-y-2 px-2 py-1">
-                          <Link to="/about" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/about" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             About Us
                           </Link>
-                          <Link to="/careers" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/careers" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Careers
                           </Link>
-                          <Link to="/contact" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
+                          <Link href="/contact" className="text-sm px-4 py-2 hover:bg-muted rounded-md transition-colors">
                             Contact
                           </Link>
                         </div>
