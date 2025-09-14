@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -430,7 +432,7 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <Button size="lg" className="gap-2">
-              <Link href="/product/platform" className="flex items-center gap-2">
+              <Link href="/platform" className="flex items-center gap-2">
                 See How It Works <Play className="h-4 w-4" />
               </Link>
             </Button>

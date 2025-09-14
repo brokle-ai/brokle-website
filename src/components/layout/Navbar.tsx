@@ -80,7 +80,7 @@ export default function Navbar() {
                         <NavigationMenuLink asChild>
                           <a
                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary/20 to-primary/5 p-6 no-underline outline-none focus:shadow-md"
-                            href="/product/platform"
+                            href="/platform"
                           >
                             <div className="mb-2 mt-4 text-lg font-medium">
                               Brokle Platform

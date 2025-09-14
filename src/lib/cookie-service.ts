@@ -6,7 +6,7 @@ const cookieDefaults = {
   expires: 365, // days
   path: '/',
   sameSite: 'strict' as const,
-  secure: window.location.protocol === 'https:',
+  secure: typeof window !== 'undefined' ? window.location.protocol === 'https:' : true,
 };
 
 export const initializeAnalytics = () => {
