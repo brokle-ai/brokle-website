@@ -1,9 +1,10 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
-import { ShieldCheck, Cookie, BarChart2, Settings, X } from "lucide-react";
+import { ShieldCheck, Cookie, BarChart2, Settings, X, ChevronDown, ChevronUp } from "lucide-react";
+import { useCookieConsentContext } from '@/providers/cookie-consent-provider';
 
 // shadcn UI components
 import { Button } from "@/components/ui/button";
@@ -15,16 +16,10 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 
 // Types
 export interface CookiePreferences {
@@ -37,30 +32,12 @@ export interface CookiePreferences {
 // Local storage key
 const COOKIE_CONSENT_KEY = "cookie-consent-preferences";
 
-// Example "apply" function that runs scripts or tracking based on consent
-function applyCookiePreferences(prefs: CookiePreferences) {
-  // Real implementation: conditionally load your analytics/marketing scripts
-  if (prefs.analytics) {
-    console.log("Analytics cookies enabled");
-    // initializeAnalytics();
-  }
-  if (prefs.marketing) {
-    console.log("Marketing cookies enabled");
-    // initializeMarketing();
-  }
-  if (prefs.preferences) {
-    console.log("Preference cookies enabled");
-  }
-}
-
 export const CookieConsent: React.FC = () => {
-  // Preferences state
-  const [preferences, setPreferences] = useState<CookiePreferences>({
-    necessary: true, // always required
-    analytics: false,
-    marketing: false,
-    preferences: false,
-  });
+  // Use the context for persistent preferences
+  const { preferences, updatePreferences } = useCookieConsentContext();
+
+  // Add a temporary state to track changes in the dialog without saving immediately
+  const [tempPreferences, setTempPreferences] = useState<CookiePreferences>({...preferences});
 
   // Tracks if user has previously set preferences
   const [hasSavedPreferences, setHasSavedPreferences] = useState(false);
@@ -71,43 +48,83 @@ export const CookieConsent: React.FC = () => {
   // Show/hide advanced dialog
   const [showAdvancedDialog, setShowAdvancedDialog] = useState(false);
 
+  // Track expanded descriptions
+  const [expandedSections, setExpandedSections] = useState({
+    necessary: false,
+    analytics: false,
+    marketing: false,
+    preferences: false
+  });
+
+  const isCookieSettingButtonEnabled = false;
+
   // Load saved preferences once on mount
   useEffect(() => {
     const savedPrefs = localStorage.getItem(COOKIE_CONSENT_KEY);
     if (savedPrefs) {
-      const parsed = JSON.parse(savedPrefs) as CookiePreferences;
-      setPreferences(parsed);
       setHasSavedPreferences(true);
-      // Optionally apply them right away:
-      applyCookiePreferences(parsed);
     } else {
       // If none saved, show the banner
       setShowBanner(true);
     }
   }, []);
 
+  // When dialog opens, initialize temporary preferences with current values
+  useEffect(() => {
+    if (showAdvancedDialog) {
+      setTempPreferences({...preferences});
+    }
+  }, [showAdvancedDialog, preferences]);
+
+  // Helper function to update temporary preferences
+  const updateTempPreferences = (update: Partial<CookiePreferences>) => {
+    setTempPreferences(prev => ({
+      ...prev,
+      ...update
+    }));
+  };
+
+  // Toggle section expansion
+  const toggleSection = (section: keyof typeof expandedSections) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
   // ---- Handlers ----
   const handleAcceptAll = () => {
-    const allEnabled = {
+    const allAccepted = {
       necessary: true,
       analytics: true,
       marketing: true,
       preferences: true,
     };
-    setPreferences(allEnabled);
-    savePreferences(allEnabled);
+
+    // Update context preferences
+    updatePreferences(allAccepted);
+
+    // Update temp preferences to match
+    setTempPreferences(allAccepted);
+
     // Hide the banner & dialog
+    setHasSavedPreferences(true);
     setShowBanner(false);
     setShowAdvancedDialog(false);
+
     toast("All cookies accepted", {
       description: "Your cookie preferences have been saved",
     });
   };
 
   const handleSavePreferences = () => {
-    savePreferences(preferences);
+    // Now we only apply all changes at once when explicitly saving
+    updatePreferences(tempPreferences);
+
+    setHasSavedPreferences(true);
     setShowBanner(false);
     setShowAdvancedDialog(false);
+
     toast("Preferences saved", {
       description: "Your cookie preferences have been saved",
     });
@@ -120,19 +137,18 @@ export const CookieConsent: React.FC = () => {
       marketing: false,
       preferences: false,
     };
-    setPreferences(essentialOnly);
-    savePreferences(essentialOnly);
+
+    // Update both states
+    updatePreferences(essentialOnly);
+    setTempPreferences(essentialOnly);
+
+    setHasSavedPreferences(true);
     setShowBanner(false);
     setShowAdvancedDialog(false);
+
     toast("Only essential cookies accepted", {
       description: "Your cookie preferences have been saved",
     });
-  };
-
-  const savePreferences = (prefs: CookiePreferences) => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(prefs));
-    applyCookiePreferences(prefs);
-    setHasSavedPreferences(true);
   };
 
   // ---- Render ----
@@ -153,7 +169,12 @@ export const CookieConsent: React.FC = () => {
                   <Cookie className="h-5 w-5 text-primary" />
                   <CardTitle>Cookie Preferences</CardTitle>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => setShowBanner(false)}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setShowBanner(false)}
+                  aria-label="Close cookie banner"
+                >
                   <X className="h-4 w-4" />
                 </Button>
               </div>
@@ -161,34 +182,7 @@ export const CookieConsent: React.FC = () => {
                 We use cookies to enhance your browsing experience. Choose which cookies you want to allow.
               </CardDescription>
             </CardHeader>
-            
-            <CardContent className="pt-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                <div className="flex items-center gap-3 p-2 rounded-lg bg-gray-50 dark:bg-gray-800/60">
-                  <ShieldCheck className="h-5 w-5 text-primary" />
-                  <div className="flex-1">
-                    <h4 className="font-medium text-sm">Necessary</h4>
-                    <p className="text-xs text-muted-foreground">Required for basic functionality</p>
-                  </div>
-                  <Switch className="ml-auto" checked disabled />
-                </div>
-                <div className="flex items-center gap-3 p-2 rounded-lg bg-gray-50 dark:bg-gray-800/60">
-                  <BarChart2 className="h-5 w-5 text-primary" />
-                  <div className="flex-1">
-                    <h4 className="font-medium text-sm">Analytics</h4>
-                    <p className="text-xs text-muted-foreground">Helps us improve our services</p>
-                  </div>
-                  <Switch 
-                    className="ml-auto" 
-                    checked={preferences.analytics}
-                    onCheckedChange={(checked) => 
-                      setPreferences((prev) => ({ ...prev, analytics: checked }))
-                    }
-                  />
-                </div>
-              </div>
-            </CardContent>
-            
+
             <CardFooter className="flex flex-col sm:flex-row sm:justify-between gap-2 pt-0 pb-4">
               <Button variant="outline" size="sm" onClick={() => setShowAdvancedDialog(true)}>
                 More options
@@ -221,102 +215,144 @@ export const CookieConsent: React.FC = () => {
 
           <Separator />
 
-          <div className="py-4">
-            <Accordion type="single" collapsible className="w-full">
-              {/* Necessary (always checked) */}
-              <AccordionItem value="necessary" className="border-b border-gray-200 dark:border-gray-800">
-                <AccordionTrigger className="py-4 hover:no-underline">
-                  <div className="flex items-center gap-3 w-full">
-                    <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0" />
-                    <div className="flex-grow text-left">
-                      <div className="flex items-center gap-2">
-                        <span className="font-medium">Necessary Cookies</span>
-                        <Badge variant="outline" className="text-xs">Required</Badge>
-                      </div>
+          <div className="py-4 space-y-4">
+            {/* Necessary (always checked) */}
+            <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
+              <div className="flex items-center justify-between">
+                <div
+                  className="flex items-center gap-3 cursor-pointer"
+                  onClick={() => toggleSection('necessary')}
+                >
+                  <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0" />
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium">Necessary Cookies</span>
+                      <Badge variant="outline" className="text-xs">Required</Badge>
                     </div>
-                    <Switch checked disabled className="mr-4" />
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pl-8 text-sm text-muted-foreground">
+                  {expandedSections.necessary ?
+                    <ChevronUp className="h-4 w-4 ml-2" /> :
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  }
+                </div>
+                <Switch
+                  checked
+                  disabled
+                  aria-label="Necessary cookies toggle (required)"
+                />
+              </div>
+
+              {expandedSections.necessary && (
+                <div className="mt-2 ml-8 text-sm text-muted-foreground">
                   These cookies are essential for the website to function properly and cannot be disabled.
                   They enable basic functions like page navigation, secure areas access, and remember
                   your preferences.
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              )}
+            </div>
 
-              {/* Analytics */}
-              <AccordionItem value="analytics" className="border-b border-gray-200 dark:border-gray-800">
-                <AccordionTrigger className="py-4 hover:no-underline">
-                  <div className="flex items-center gap-3 w-full">
-                    <BarChart2 className="h-5 w-5 text-primary flex-shrink-0" />
-                    <div className="flex-grow text-left">
-                      <span className="font-medium">Analytics Cookies</span>
-                    </div>
-                    <Switch
-                      id="analytics"
-                      checked={preferences.analytics}
-                      onCheckedChange={(checked) =>
-                        setPreferences((prev) => ({ ...prev, analytics: checked }))
-                      }
-                      className="mr-4"
-                    />
+            {/* Analytics */}
+            <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
+              <div className="flex items-center justify-between">
+                <div
+                  className="flex items-center gap-3 cursor-pointer"
+                  onClick={() => toggleSection('analytics')}
+                >
+                  <BarChart2 className="h-5 w-5 text-primary flex-shrink-0" />
+                  <div>
+                    <span className="font-medium">Analytics Cookies</span>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pl-8 text-sm text-muted-foreground">
-                  These cookies help us understand how visitors interact with our website by collecting 
+                  {expandedSections.analytics ?
+                    <ChevronUp className="h-4 w-4 ml-2" /> :
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  }
+                </div>
+                <Switch
+                  id="analytics"
+                  checked={tempPreferences.analytics}
+                  onCheckedChange={(checked) =>
+                    updateTempPreferences({ analytics: checked })
+                  }
+                  aria-label="Analytics cookies toggle"
+                />
+              </div>
+
+              {expandedSections.analytics && (
+                <div className="mt-2 ml-8 text-sm text-muted-foreground">
+                  These cookies help us understand how visitors interact with our website by collecting
                   and reporting information anonymously. They help us improve our website and services.
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              )}
+            </div>
 
-              {/* Marketing */}
-              <AccordionItem value="marketing" className="border-b border-gray-200 dark:border-gray-800">
-                <AccordionTrigger className="py-4 hover:no-underline">
-                  <div className="flex items-center gap-3 w-full">
-                    <Cookie className="h-5 w-5 text-primary flex-shrink-0" />
-                    <div className="flex-grow text-left">
-                      <span className="font-medium">Marketing Cookies</span>
-                    </div>
-                    <Switch
-                      id="marketing"
-                      checked={preferences.marketing}
-                      onCheckedChange={(checked) =>
-                        setPreferences((prev) => ({ ...prev, marketing: checked }))
-                      }
-                      className="mr-4"
-                    />
+            {/* Marketing */}
+            <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
+              <div className="flex items-center justify-between">
+                <div
+                  className="flex items-center gap-3 cursor-pointer"
+                  onClick={() => toggleSection('marketing')}
+                >
+                  <Cookie className="h-5 w-5 text-primary flex-shrink-0" />
+                  <div>
+                    <span className="font-medium">Marketing Cookies</span>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pl-8 text-sm text-muted-foreground">
-                  These cookies are used to track visitors across websites to display relevant 
-                  advertisements. They help make advertising more engaging to users and more valuable 
+                  {expandedSections.marketing ?
+                    <ChevronUp className="h-4 w-4 ml-2" /> :
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  }
+                </div>
+                <Switch
+                  id="marketing"
+                  checked={tempPreferences.marketing}
+                  onCheckedChange={(checked) =>
+                    updateTempPreferences({ marketing: checked })
+                  }
+                  aria-label="Marketing cookies toggle"
+                />
+              </div>
+
+              {expandedSections.marketing && (
+                <div className="mt-2 ml-8 text-sm text-muted-foreground">
+                  These cookies are used to track visitors across websites to display relevant
+                  advertisements. They help make advertising more engaging to users and more valuable
                   to publishers and advertisers.
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              )}
+            </div>
 
-              {/* Preferences */}
-              <AccordionItem value="preferences" className="border-b border-gray-200 dark:border-gray-800">
-                <AccordionTrigger className="py-4 hover:no-underline">
-                  <div className="flex items-center gap-3 w-full">
-                    <Settings className="h-5 w-5 text-primary flex-shrink-0" />
-                    <div className="flex-grow text-left">
-                      <span className="font-medium">Preference Cookies</span>
-                    </div>
-                    <Switch
-                      id="preferences"
-                      checked={preferences.preferences}
-                      onCheckedChange={(checked) =>
-                        setPreferences((prev) => ({ ...prev, preferences: checked }))
-                      }
-                      className="mr-4"
-                    />
+            {/* Preferences */}
+            <div className="border-b border-gray-200 dark:border-gray-800 pb-4">
+              <div className="flex items-center justify-between">
+                <div
+                  className="flex items-center gap-3 cursor-pointer"
+                  onClick={() => toggleSection('preferences')}
+                >
+                  <Settings className="h-5 w-5 text-primary flex-shrink-0" />
+                  <div>
+                    <span className="font-medium">Preference Cookies</span>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pl-8 text-sm text-muted-foreground">
-                  These cookies enable a website to remember information that changes the way the 
+                  {expandedSections.preferences ?
+                    <ChevronUp className="h-4 w-4 ml-2" /> :
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  }
+                </div>
+                <Switch
+                  id="preferences"
+                  checked={tempPreferences.preferences}
+                  onCheckedChange={(checked) =>
+                    updateTempPreferences({ preferences: checked })
+                  }
+                  aria-label="Preference cookies toggle"
+                />
+              </div>
+
+              {expandedSections.preferences && (
+                <div className="mt-2 ml-8 text-sm text-muted-foreground">
+                  These cookies enable a website to remember information that changes the way the
                   website behaves or looks, like your preferred language or the region that you are in.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+                </div>
+              )}
+            </div>
           </div>
 
           <DialogFooter className="flex-col sm:flex-row sm:justify-between gap-2">
@@ -336,8 +372,8 @@ export const CookieConsent: React.FC = () => {
       </Dialog>
 
       {/* 3) (Optional) A small "Cookie Settings" button always available */}
-      {hasSavedPreferences && (
-        <motion.div 
+      {hasSavedPreferences && isCookieSettingButtonEnabled && (
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className="fixed bottom-4 left-4 z-50"

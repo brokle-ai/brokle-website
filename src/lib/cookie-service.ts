@@ -9,47 +9,124 @@ const cookieDefaults = {
   secure: typeof window !== 'undefined' ? window.location.protocol === 'https:' : true,
 };
 
-export const initializeAnalytics = () => {
-  // Initialize your analytics service (Google Analytics, Plausible, etc.)
-  console.log('Analytics initialized');
-  
-  // Example: Google Analytics
-  // window.dataLayer = window.dataLayer || [];
-  // function gtag(){dataLayer.push(arguments);}
-  // gtag('js', new Date());
-  // gtag('config', 'G-XXXXXXXXXX');
+// Analytics instance placeholder
+let analyticsInstance: ReturnType<typeof import('analytics').default> | null = null;
+
+export const initializeAnalytics = async () => {
+  if (analyticsInstance) return analyticsInstance;
+
+  try {
+    // Dynamically import analytics to avoid SSR issues
+    const Analytics = (await import('analytics')).default;
+    const googleAnalyticsPlugin = (await import('@analytics/google-analytics')).default;
+
+    const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+    if (!measurementId) {
+      console.warn('Google Analytics measurement ID not configured. Set NEXT_PUBLIC_GA_MEASUREMENT_ID environment variable.');
+      return null;
+    }
+
+    analyticsInstance = Analytics({
+      app: 'Brokle',
+      plugins: [
+        googleAnalyticsPlugin({
+          measurementIds: [measurementId],
+          gtagConfig: {
+            anonymize_ip: true,
+            send_page_view: true,
+            cookie_flags: 'SameSite=None;Secure'
+          }
+        })
+      ]
+    });
+
+    console.log('Analytics initialized successfully');
+    return analyticsInstance;
+  } catch (error) {
+    console.error('Failed to initialize analytics:', error);
+    return null;
+  }
+};
+
+export const trackPageView = async (path: string) => {
+  const analytics = analyticsInstance || await initializeAnalytics();
+
+  if (!analytics) {
+    console.warn('Analytics not available. Page view not tracked.');
+    return;
+  }
+
+  analytics.page({
+    path: path,
+    title: typeof document !== 'undefined' ? document.title : ''
+  });
+};
+
+export const trackEvent = async (category: string, action: string, label?: string, value?: number) => {
+  const analytics = analyticsInstance || await initializeAnalytics();
+
+  if (!analytics) {
+    console.warn('Analytics not available. Event not tracked.');
+    return;
+  }
+
+  analytics.track(action, {
+    category,
+    label,
+    value
+  });
 };
 
 export const initializeMarketing = () => {
   // Initialize marketing pixels (Facebook, LinkedIn, etc.)
   console.log('Marketing cookies initialized');
-  
-  // Example: Facebook Pixel
-  // !function(f,b,e,v,n,t,s) {
-  //   if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  //   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  //   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  //   n.queue=[];t=b.createElement(e);t.async=!0;
-  //   t.src=v;s=b.getElementsByTagName(e)[0];
-  //   s.parentNode.insertBefore(t,s)}(window, document,'script',
-  //   'https://connect.facebook.net/en_US/fbevents.js');
-  //   fbq('init', 'XXXXXXXXXXXXXXXXX');
-  //   fbq('track', 'PageView');
+
+  // Example: Facebook Pixel implementation would go here
 };
 
 export const applyPreferences = (preferences: CookiePreferences) => {
+  console.log("Applying cookie preferences:", preferences);
+
+  // Set a flag to track initialization success
+  let analyticsSuccess = false;
+
   if (preferences.analytics) {
-    initializeAnalytics();
+    initializeAnalytics().then(result => {
+      analyticsSuccess = !!result;
+      console.log("Analytics initialization result:", analyticsSuccess ? "Success" : "Failed");
+    });
+  } else {
+    // Disable analytics if previously enabled
+    analyticsInstance = null;
+
+    // Optionally remove Google Analytics cookies
+    removeCookie('_ga');
+    removeCookie('_gid');
+    removeCookie('_gat');
+
+    // Remove GA cookies from all potential domains
+    if (typeof window !== 'undefined') {
+      const domains = [window.location.hostname, `.${window.location.hostname}`, 'www.' + window.location.hostname, '.' + window.location.hostname];
+      domains.forEach(domain => {
+        removeCookie('_ga', { domain });
+        removeCookie('_gid', { domain });
+        removeCookie('_gat', { domain });
+      });
+    }
   }
-  
+
   if (preferences.marketing) {
     initializeMarketing();
   }
-  
+
   if (preferences.preferences) {
     // Enable preference cookies
     console.log('Preference cookies initialized');
   }
+
+  // Return overall success status
+  return preferences.analytics ? analyticsSuccess : true;
 };
 
 export const setCookie = (name: string, value: string, options = {}) => {
@@ -60,6 +137,6 @@ export const getCookie = (name: string): string | undefined => {
   return Cookies.get(name);
 };
 
-export const removeCookie = (name: string) => {
-  Cookies.remove(name, { path: cookieDefaults.path });
+export const removeCookie = (name: string, options = {}) => {
+  Cookies.remove(name, { path: cookieDefaults.path, ...options });
 };

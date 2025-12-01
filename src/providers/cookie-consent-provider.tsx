@@ -1,9 +1,8 @@
-'use client'
+'use client';
 
 import React, { createContext, useContext, ReactNode } from 'react';
 import { useCookieConsent } from '@/hooks/use-cookie-consent';
 import type { CookiePreferences } from '@/components/cookie-consent';
-import { applyPreferences } from '@/lib/cookie-service';
 
 interface CookieConsentContextType {
   preferences: CookiePreferences;
@@ -17,14 +16,7 @@ const CookieConsentContext = createContext<CookieConsentContextType | undefined>
 
 export const CookieConsentProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const cookieConsent = useCookieConsent();
-  
-  // Apply preferences when initialized
-  React.useEffect(() => {
-    if (cookieConsent.initialized) {
-      applyPreferences(cookieConsent.preferences);
-    }
-  }, [cookieConsent.initialized, cookieConsent.preferences]);
-  
+
   return (
     <CookieConsentContext.Provider value={cookieConsent}>
       {children}
