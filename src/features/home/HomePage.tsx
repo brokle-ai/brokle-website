@@ -1,5 +1,6 @@
 import { HeroSection } from "./sections/HeroSection"
 import { SocialProofSection } from "./sections/SocialProofSection"
+import { FeatureTabsSection } from "./sections/FeatureTabsSection"
 import { KeyFeaturesSection } from "./sections/KeyFeaturesSection"
 import { IntegrationsSection } from "./sections/IntegrationsSection"
 import { CodeExampleSection } from "./sections/CodeExampleSection"
@@ -11,6 +12,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <SocialProofSection />
+      <FeatureTabsSection />
       <KeyFeaturesSection />
       <IntegrationsSection />
       <CodeExampleSection />

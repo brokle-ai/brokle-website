@@ -1,27 +1,31 @@
-'use client'
-
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { motion } from "@/components/custom/motion"
 
+// Expanded provider list similar to Helicone
 const providers = [
-  { name: "OpenAI", logo: "/logos/openai.svg" },
-  { name: "Anthropic", logo: "/logos/anthropic.svg" },
-  { name: "Google AI", logo: "/logos/google.svg" },
-  { name: "Azure OpenAI", logo: "/logos/azure.svg" },
-  { name: "Cohere", logo: "/logos/cohere.svg" },
-  { name: "Mistral", logo: "/logos/mistral.svg" },
+  { name: "OpenAI", abbr: "OAI" },
+  { name: "Anthropic", abbr: "ANT" },
+  { name: "Google AI", abbr: "GGL" },
+  { name: "Azure OpenAI", abbr: "AZR" },
+  { name: "AWS Bedrock", abbr: "AWS" },
+  { name: "Cohere", abbr: "COH" },
+  { name: "Mistral", abbr: "MIS" },
+  { name: "Groq", abbr: "GRQ" },
+  { name: "Together AI", abbr: "TOG" },
+  { name: "Fireworks", abbr: "FWK" },
+  { name: "Replicate", abbr: "REP" },
+  { name: "Ollama", abbr: "OLL" },
 ]
 
 const frameworks = [
-  { name: "LangChain", logo: "/logos/langchain.svg" },
-  { name: "LangGraph", logo: "/logos/langgraph.svg" },
-  { name: "LlamaIndex", logo: "/logos/llamaindex.svg" },
-  { name: "Vercel AI SDK", logo: "/logos/vercel.svg" },
-  { name: "Haystack", logo: "/logos/haystack.svg" },
-  { name: "OpenTelemetry", logo: "/logos/opentelemetry.svg" },
+  { name: "LangChain", abbr: "LC" },
+  { name: "LlamaIndex", abbr: "LI" },
+  { name: "Vercel AI", abbr: "VAI" },
+  { name: "OpenTelemetry", abbr: "OTL" },
+  { name: "Instructor", abbr: "INS" },
+  { name: "DSPy", abbr: "DSP" },
 ]
 
 const sdks = [
@@ -32,88 +36,76 @@ const sdks = [
 
 export function IntegrationsSection() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-muted/30">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Works With Your Stack
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Integrates with every LLM provider and framework
+            One SDK for 100+ models
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Native integrations with popular AI providers and frameworks.
-            Get started in minutes with a few lines of code.
+            Native integrations with every major AI provider and framework.
+            Drop-in compatibility with your existing code.
           </p>
         </div>
 
-        {/* Providers */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <p className="text-sm font-medium text-muted-foreground mb-4 text-center">
+        {/* Provider Cloud - Similar to Helicone's floating logos */}
+        <div className="max-w-5xl mx-auto mb-10">
+          <p className="text-sm font-medium text-muted-foreground mb-6 text-center uppercase tracking-wider">
             AI Providers
           </p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {providers.map((provider, index) => (
-              <motion.div
+          <div className="flex flex-wrap justify-center gap-3">
+            {providers.map((provider) => (
+              <div
                 key={provider.name}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center justify-center p-4 rounded-lg border bg-background hover:border-primary/50 hover:shadow-sm transition-all"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full border bg-background hover:border-foreground/20 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 transition-all cursor-default"
               >
-                <div className="w-10 h-10 mb-2 flex items-center justify-center text-muted-foreground">
-                  <div className="w-8 h-8 rounded bg-muted flex items-center justify-center text-xs font-medium">
-                    {provider.name.slice(0, 2)}
-                  </div>
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-muted to-muted-foreground/20 flex items-center justify-center">
+                  <span className="text-[10px] font-bold text-foreground/70">{provider.abbr}</span>
                 </div>
-                <span className="text-xs font-medium text-center">{provider.name}</span>
-              </motion.div>
+                <span className="text-sm font-medium">{provider.name}</span>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Frameworks */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <p className="text-sm font-medium text-muted-foreground mb-4 text-center">
+        {/* Frameworks - Compact pills */}
+        <div className="max-w-4xl mx-auto mb-10">
+          <p className="text-sm font-medium text-muted-foreground mb-6 text-center uppercase tracking-wider">
             Frameworks & Standards
           </p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {frameworks.map((framework, index) => (
-              <motion.div
+          <div className="flex flex-wrap justify-center gap-3">
+            {frameworks.map((framework) => (
+              <div
                 key={framework.name}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center justify-center p-4 rounded-lg border bg-background hover:border-primary/50 hover:shadow-sm transition-all"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full border bg-background hover:border-foreground/20 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 transition-all cursor-default"
               >
-                <div className="w-10 h-10 mb-2 flex items-center justify-center text-muted-foreground">
-                  <div className="w-8 h-8 rounded bg-muted flex items-center justify-center text-xs font-medium">
-                    {framework.name.slice(0, 2)}
-                  </div>
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                  <span className="text-[10px] font-bold text-primary">{framework.abbr}</span>
                 </div>
-                <span className="text-xs font-medium text-center">{framework.name}</span>
-              </motion.div>
+                <span className="text-sm font-medium">{framework.name}</span>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* SDKs */}
-        <div className="max-w-2xl mx-auto">
-          <p className="text-sm font-medium text-muted-foreground mb-4 text-center">
+        {/* SDKs - Highlighted */}
+        <div className="max-w-3xl mx-auto">
+          <p className="text-sm font-medium text-muted-foreground mb-6 text-center uppercase tracking-wider">
             Official SDKs
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
             {sdks.map((sdk) => (
               <div
                 key={sdk.name}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border bg-background"
+                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-background hover:border-primary/50 transition-colors"
               >
-                <span className="font-medium text-sm">{sdk.name}</span>
-                <Badge variant="secondary" className="text-xs font-mono">
+                <span className="font-semibold">{sdk.name}</span>
+                <code className="text-xs px-2 py-1 rounded bg-muted font-mono text-muted-foreground">
                   {sdk.badge}
-                </Badge>
+                </code>
               </div>
             ))}
           </div>

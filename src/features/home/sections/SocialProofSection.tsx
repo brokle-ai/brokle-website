@@ -1,41 +1,65 @@
-'use client'
+import { Star, Download, Users, GitBranch } from "lucide-react"
 
-import { motion } from "@/components/custom/motion"
-
+// Placeholder customer logos - similar to Helicone/Phoenix patterns
 const customers = [
-  { name: "Company 1", logo: "C1" },
-  { name: "Company 2", logo: "C2" },
-  { name: "Company 3", logo: "C3" },
-  { name: "Company 4", logo: "C4" },
-  { name: "Company 5", logo: "C5" },
-  { name: "Company 6", logo: "C6" },
+  { name: "Acme AI", initials: "AI" },
+  { name: "TechCorp", initials: "TC" },
+  { name: "DataFlow", initials: "DF" },
+  { name: "MLOps Inc", initials: "ML" },
+  { name: "ScaleAI", initials: "SA" },
+  { name: "NeuralNet", initials: "NN" },
+]
+
+// Metrics similar to Phoenix/Langfuse
+const metrics = [
+  { icon: Star, value: "1.2K+", label: "GitHub Stars" },
+  { icon: Download, value: "50K+", label: "Monthly Downloads" },
+  { icon: Users, value: "500+", label: "Teams" },
+  { icon: GitBranch, value: "100%", label: "Open Source" },
 ]
 
 export function SocialProofSection() {
   return (
     <section className="py-12 border-y bg-muted/20">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-8">
+        {/* Metrics Row - Similar to Phoenix */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-10">
+          {metrics.map((metric) => (
+            <div
+              key={metric.label}
+              className="flex items-center gap-3"
+            >
+              <div className="p-2 rounded-lg bg-primary/10">
+                <metric.icon className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold">{metric.value}</div>
+                <div className="text-xs text-muted-foreground">{metric.label}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Customer Logos */}
+        <div className="text-center mb-6">
           <p className="text-sm text-muted-foreground font-medium">
             Trusted by teams building production AI applications
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-4xl mx-auto">
-          {customers.map((customer, index) => (
-            <motion.div
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 max-w-4xl mx-auto">
+          {customers.map((customer) => (
+            <div
               key={customer.name}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              viewport={{ once: true }}
               className="flex items-center justify-center"
             >
-              {/* Placeholder for actual logos - replace with real logos */}
-              <div className="w-24 h-8 rounded bg-muted/50 flex items-center justify-center text-muted-foreground text-xs font-medium opacity-60 hover:opacity-100 transition-opacity">
-                {customer.logo}
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg border bg-background/50 opacity-60 hover:opacity-100 transition-opacity">
+                <div className="w-8 h-8 rounded bg-gradient-to-br from-muted to-muted-foreground/30 flex items-center justify-center">
+                  <span className="text-xs font-bold text-foreground/70">{customer.initials}</span>
+                </div>
+                <span className="text-sm font-medium text-muted-foreground">{customer.name}</span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
