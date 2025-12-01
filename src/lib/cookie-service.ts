@@ -12,7 +12,7 @@ const cookieDefaults = {
 // Analytics instance placeholder
 let analyticsInstance: ReturnType<typeof import('analytics').default> | null = null;
 
-export const initializeAnalytics = async () => {
+export const initializeAnalytics = async (): Promise<ReturnType<typeof import('analytics').default> | null> => {
   if (analyticsInstance) return analyticsInstance;
 
   try {
@@ -49,7 +49,7 @@ export const initializeAnalytics = async () => {
   }
 };
 
-export const trackPageView = async (path: string) => {
+export const trackPageView = async (path: string): Promise<void> => {
   const analytics = analyticsInstance || await initializeAnalytics();
 
   if (!analytics) {
@@ -63,7 +63,7 @@ export const trackPageView = async (path: string) => {
   });
 };
 
-export const trackEvent = async (category: string, action: string, label?: string, value?: number) => {
+export const trackEvent = async (category: string, action: string, label?: string, value?: number): Promise<void> => {
   const analytics = analyticsInstance || await initializeAnalytics();
 
   if (!analytics) {
@@ -78,14 +78,14 @@ export const trackEvent = async (category: string, action: string, label?: strin
   });
 };
 
-export const initializeMarketing = () => {
+export const initializeMarketing = (): void => {
   // Initialize marketing pixels (Facebook, LinkedIn, etc.)
   console.log('Marketing cookies initialized');
 
   // Example: Facebook Pixel implementation would go here
 };
 
-export const applyPreferences = (preferences: CookiePreferences) => {
+export const applyPreferences = (preferences: CookiePreferences): boolean => {
   console.log("Applying cookie preferences:", preferences);
 
   // Set a flag to track initialization success
@@ -129,7 +129,7 @@ export const applyPreferences = (preferences: CookiePreferences) => {
   return preferences.analytics ? analyticsSuccess : true;
 };
 
-export const setCookie = (name: string, value: string, options = {}) => {
+export const setCookie = (name: string, value: string, options: Record<string, unknown> = {}): void => {
   Cookies.set(name, value, { ...cookieDefaults, ...options });
 };
 
@@ -137,6 +137,6 @@ export const getCookie = (name: string): string | undefined => {
   return Cookies.get(name);
 };
 
-export const removeCookie = (name: string, options = {}) => {
+export const removeCookie = (name: string, options: Record<string, unknown> = {}): void => {
   Cookies.remove(name, { path: cookieDefaults.path, ...options });
 };

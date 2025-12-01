@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import DotPattern from "@/components/ui/dot-pattern";
 import Particles from "@/components/ui/particles";

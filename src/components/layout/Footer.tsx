@@ -52,23 +52,23 @@ export default function Footer() {
             <h3 className="font-medium text-lg mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/features" className="text-muted-foreground hover:text-foreground transition-colors">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/enterprise" className="text-muted-foreground hover:text-foreground transition-colors">
                   Enterprise
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Case Studies
+                <Link href="/solutions" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Solutions
                 </Link>
               </li>
               <li>
@@ -83,27 +83,27 @@ export default function Footer() {
             <h3 className="font-medium text-lg mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/platform" className="text-muted-foreground hover:text-foreground transition-colors">
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/platform" className="text-muted-foreground hover:text-foreground transition-colors">
                   API Reference
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Guides
+                <Link href="/why-brokle" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Why Brokle
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/changelog" className="text-muted-foreground hover:text-foreground transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
                   Community
                 </Link>
               </li>
@@ -119,7 +119,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
                   Careers
                 </Link>
               </li>
@@ -148,14 +148,14 @@ export default function Footer() {
               © 2025 Brokle, Inc. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-4">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Privacy
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Terms
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Cookies
+              <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Cookie Settings
               </Link>
             </div>
           </div>

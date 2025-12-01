@@ -1,11 +1,8 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, CheckCircle, Info, Lock, Shield, Star } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { RequestAccessForm } from "./request-access-form"
 
 export default function RequestAccessPage() {
   return (
@@ -28,63 +25,8 @@ export default function RequestAccessPage() {
                 <CardDescription>Fill out the form below to get started with your free access.</CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" placeholder="John Doe" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Work Email</Label>
-                    <Input id="email" type="email" placeholder="john@company.com" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="company">Company Name</Label>
-                    <Input id="company" placeholder="Your Company" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="role">Your Role</Label>
-                    <Select>
-                      <SelectTrigger id="role">
-                        <SelectValue placeholder="Select your role" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="researcher">Researcher</SelectItem>
-                        <SelectItem value="data-scientist">Data Scientist</SelectItem>
-                        <SelectItem value="developer">Developer</SelectItem>
-                        <SelectItem value="product-manager">Product Manager</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="team-size">Team Size</Label>
-                    <Select>
-                      <SelectTrigger id="team-size">
-                        <SelectValue placeholder="Select team size" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1">Just me</SelectItem>
-                        <SelectItem value="2-5">2-5 people</SelectItem>
-                        <SelectItem value="6-10">6-10 people</SelectItem>
-                        <SelectItem value="11-50">11-50 people</SelectItem>
-                        <SelectItem value="50+">50+ people</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="use-case">How do you plan to use our platform?</Label>
-                    <Textarea id="use-case" placeholder="Tell us about your use case and requirements" />
-                  </div>
-                </form>
+                <RequestAccessForm />
               </CardContent>
-              <CardFooter>
-                <Button className="w-full">Submit Request</Button>
-              </CardFooter>
             </Card>
 
             {/* Benefits Section */}
