@@ -21,6 +21,7 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "@/components/custom/motion"
 import { BackgroundPattern } from "@/components/custom/hero/background-pattern"
+import Image from "next/image"
 
 export default function HomePage() {
   return (
@@ -601,11 +602,12 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <Card className="overflow-hidden border-t-4 border-t-primary">
-              <div className="h-40 overflow-hidden">
-                <img
+              <div className="h-40 overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=400"
                   alt="Autonomous Vehicles"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <CardHeader className="pb-2">
@@ -622,11 +624,12 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden border-t-4 border-t-primary">
-              <div className="h-40 overflow-hidden">
-                <img
+              <div className="h-40 overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=400"
                   alt="Healthcare AI"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <CardHeader className="pb-2">
@@ -643,11 +646,12 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden border-t-4 border-t-primary">
-              <div className="h-40 overflow-hidden">
-                <img
+              <div className="h-40 overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=400"
                   alt="Robotics"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <CardHeader className="pb-2">
@@ -664,11 +668,12 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden border-t-4 border-t-primary">
-              <div className="h-40 overflow-hidden">
-                <img
+              <div className="h-40 overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=400"
                   alt="Natural Language Processing"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <CardHeader className="pb-2">
@@ -801,9 +806,11 @@ export default function HomePage() {
                   </Button>
                 </div>
                 <div className="bg-muted/30 flex items-center justify-center p-8">
-                  <img
+                  <Image
                     src="/placeholder.svg?height=400&width=400"
                     alt="Open Source + SaaS"
+                    width={400}
+                    height={400}
                     className="max-w-full h-auto rounded-lg shadow-sm"
                   />
                 </div>

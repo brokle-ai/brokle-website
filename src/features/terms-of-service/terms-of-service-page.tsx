@@ -47,10 +47,10 @@ export default function TermsOfServicePage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
                 <p>
-                  By accessing or using Brokle's website, products, or services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you should not use our services.
+                  By accessing or using Brokle&apos;s website, products, or services, you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree to these Terms, you should not use our services.
                 </p>
                 <p>
-                  These Terms constitute a legally binding agreement between you and Brokle, Inc. ("we", "our", or "us"). We reserve the right to update or modify these Terms at any time without prior notice. Your continued use of our services following any changes indicates your acceptance of the new Terms.
+                  These Terms constitute a legally binding agreement between you and Brokle, Inc. (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). We reserve the right to update or modify these Terms at any time without prior notice. Your continued use of our services following any changes indicates your acceptance of the new Terms.
                 </p>
               </section>
 
@@ -93,7 +93,7 @@ export default function TermsOfServicePage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-bold mb-4">5. User Content</h2>
                 <p>
-                  Our services allow you to upload, submit, store, send, or receive content ("User Content"). You retain ownership of any intellectual property rights that you hold in that User Content.
+                  Our services allow you to upload, submit, store, send, or receive content (&quot;User Content&quot;). You retain ownership of any intellectual property rights that you hold in that User Content.
                 </p>
                 <p>
                   When you upload, submit, store, send, or receive User Content through our services, you give us (and those we work with) a worldwide license to use, host, store, reproduce, modify, create derivative works, communicate, publish, publicly perform, publicly display, and distribute such User Content. The rights you grant in this license are for the limited purpose of operating, promoting, and improving our services.
@@ -112,7 +112,7 @@ export default function TermsOfServicePage() {
                   <li>In any way that violates any applicable law or regulation</li>
                   <li>To transmit any material that is defamatory, offensive, or otherwise objectionable</li>
                   <li>To impersonate any person or entity or falsely state or misrepresent your affiliation with a person or entity</li>
-                  <li>To engage in any conduct that restricts or inhibits anyone's use or enjoyment of our services</li>
+                  <li>To engage in any conduct that restricts or inhibits anyone&apos;s use or enjoyment of our services</li>
                   <li>To attempt to gain unauthorized access to our services, user accounts, or computer systems</li>
                   <li>To transmit any viruses, malware, or other harmful code</li>
                   <li>To collect or harvest any information from our services or users without authorization</li>
@@ -133,7 +133,7 @@ export default function TermsOfServicePage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-bold mb-4">8. Disclaimer of Warranties</h2>
                 <p>
-                  OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED. WITHOUT LIMITING THE FOREGOING, WE EXPLICITLY DISCLAIM ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE.
+                  OUR SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE,&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED. WITHOUT LIMITING THE FOREGOING, WE EXPLICITLY DISCLAIM ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE.
                 </p>
                 <p>
                   We make no warranty that our services will meet your requirements or be available on an uninterrupted, secure, or error-free basis. We make no warranty regarding the quality, accuracy, timeliness, truthfulness, completeness, or reliability of any content available through our services.
@@ -212,7 +212,7 @@ export default function TermsOfServicePage() {
               <AccordionItem value="item-1">
                 <AccordionTrigger>How can I terminate my account?</AccordionTrigger>
                 <AccordionContent>
-                  You can terminate your account at any time by going to your account settings and selecting the "Delete Account" option, or by contacting our support team at support@brokle.com. Upon termination, you will lose access to our services, and we will delete your data in accordance with our Privacy Policy.
+                  You can terminate your account at any time by going to your account settings and selecting the &quot;Delete Account&quot; option, or by contacting our support team at support@brokle.com. Upon termination, you will lose access to our services, and we will delete your data in accordance with our Privacy Policy.
                 </AccordionContent>
               </AccordionItem>
 

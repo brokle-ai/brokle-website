@@ -16,7 +16,7 @@ export default function PricingPage() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing</h1>
             <p className="text-xl text-muted-foreground">
-            Choose the plan that's right for your team, from startups to enterprise organizations. No hidden fees, no surprises.
+            Choose the plan that&apos;s right for your team, from startups to enterprise organizations. No hidden fees, no surprises.
             </p>
           </div>
 
@@ -452,7 +452,7 @@ export default function PricingPage() {
               <Badge className="mb-4">Feature Comparison</Badge>
               <h2 className="text-3xl font-bold mb-4">Compare Plan Features</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                See exactly what's included in each plan to find the right fit for your team.
+                See exactly what&apos;s included in each plan to find the right fit for your team.
               </p>
             </div>
 
@@ -884,7 +884,7 @@ export default function PricingPage() {
               </AccordionItem>
 
               <AccordionItem value="item-6">
-                <AccordionTrigger>What's included in the Enterprise plan?</AccordionTrigger>
+                <AccordionTrigger>What&apos;s included in the Enterprise plan?</AccordionTrigger>
                 <AccordionContent>
                   The Enterprise plan includes everything in the Pro plan plus unlimited users, SSO integration,
                   advanced security features, custom integrations, on-premises deployment options, a dedicated account

@@ -78,7 +78,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <p className="mb-4">
-                  Great design is more than aesthetics—it's about creating intuitive, engaging user experiences that convert visitors into customers. Our design team focuses on both form and function.
+                  Great design is more than aesthetics—it&apos;s about creating intuitive, engaging user experiences that convert visitors into customers. Our design team focuses on both form and function.
                 </p>
                 <ul className="ml-5 list-disc space-y-1">
                   <li>User experience research</li>
@@ -144,7 +144,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <p className="mb-4">
-                  Our relationship doesn't end after launch. We provide ongoing maintenance and support to ensure your digital solutions continue to perform at their best.
+                  Our relationship doesn&apos;t end after launch. We provide ongoing maintenance and support to ensure your digital solutions continue to perform at their best.
                 </p>
                 <ul className="ml-5 list-disc space-y-1">
                   <li>Regular updates and maintenance</li>
@@ -215,7 +215,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold">Let's Build Something Amazing Together</h2>
+          <h2 className="mb-6 text-3xl font-bold">Let&apos;s Build Something Amazing Together</h2>
           <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
             Ready to start your next project? Contact us today for a free consultation and quote.
           </p>

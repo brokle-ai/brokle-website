@@ -4,11 +4,12 @@ import {
   BarChart3,
   Brain,
   FileText,
-  Image,
+  Image as ImageIcon,
   MessageSquare,
   Mic,
   Play,
 } from "lucide-react";
+import Image from "next/image";
 
 export function AiDomainsSection() {
   return (
@@ -46,7 +47,7 @@ export function AiDomainsSection() {
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-primary/10 p-3 rounded-full">
-                    <Image className="h-6 w-6 text-primary" />
+                    <ImageIcon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold">Computer Vision 🖼️</h3>
@@ -61,9 +62,11 @@ export function AiDomainsSection() {
                   {/* Grid-style cards with hover effects */}
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
                         alt="Semantic Segmentation"
+                        width={300}
+                        height={200}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
@@ -83,8 +86,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Object Detection"
                         className="w-full h-full object-cover"
                       />
@@ -105,8 +110,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Keypoint Labeling"
                         className="w-full h-full object-cover"
                       />
@@ -127,8 +134,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Image Classification"
                         className="w-full h-full object-cover"
                       />
@@ -149,8 +158,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Image Captioning & OCR"
                         className="w-full h-full object-cover"
                       />
@@ -171,8 +182,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Visual QA & Genome"
                         className="w-full h-full object-cover"
                       />
@@ -193,8 +206,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Object Detection with Ellipses"
                         className="w-full h-full object-cover"
                       />
@@ -214,8 +229,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Multi-Image Classification"
                         className="w-full h-full object-cover"
                       />
@@ -235,8 +252,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Inventory Tracking"
                         className="w-full h-full object-cover"
                       />
@@ -277,8 +296,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Question Answering"
                         className="w-full h-full object-cover"
                       />
@@ -298,8 +319,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Sentiment Analysis"
                         className="w-full h-full object-cover"
                       />
@@ -319,8 +342,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Named Entity Recognition"
                         className="w-full h-full object-cover"
                       />
@@ -340,8 +365,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Taxonomy"
                         className="w-full h-full object-cover"
                       />
@@ -361,8 +388,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Relation Extraction"
                         className="w-full h-full object-cover"
                       />
@@ -382,8 +411,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Text Summarization"
                         className="w-full h-full object-cover"
                       />
@@ -403,8 +434,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Machine Translation"
                         className="w-full h-full object-cover"
                       />
@@ -424,8 +457,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Text Classification"
                         className="w-full h-full object-cover"
                       />
@@ -458,7 +493,7 @@ export function AiDomainsSection() {
                       Audio & Speech Processing 🎙️
                     </h3>
                     <p className="text-lg text-muted-foreground">
-                      Enhance AI's understanding of speech and sound.
+                      Enhance AI&apos;s understanding of speech and sound.
                     </p>
                   </div>
                 </div>
@@ -466,8 +501,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Automatic Speech Recognition"
                         className="w-full h-full object-cover"
                       />
@@ -487,8 +524,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Sound Event Detection"
                         className="w-full h-full object-cover"
                       />
@@ -508,8 +547,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="ASR with Segments"
                         className="w-full h-full object-cover"
                       />
@@ -529,8 +570,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Signal Quality Detection"
                         className="w-full h-full object-cover"
                       />
@@ -550,8 +593,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Speaker Diarization"
                         className="w-full h-full object-cover"
                       />
@@ -571,8 +616,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Dialogue Analysis"
                         className="w-full h-full object-cover"
                       />
@@ -592,8 +639,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Audio Classification"
                         className="w-full h-full object-cover"
                       />
@@ -613,8 +662,10 @@ export function AiDomainsSection() {
 
                   <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img
+                      <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Voice Activity Detection"
                         className="w-full h-full object-cover"
                       />
@@ -653,8 +704,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Response Generation"
                         className="w-full h-full object-cover"
                     />
@@ -674,8 +727,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Response Selection"
                         className="w-full h-full object-cover"
                     />
@@ -695,8 +750,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Coreference Resolution and Entity Linking"
                         className="w-full h-full object-cover"
                     />
@@ -716,8 +773,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Slot Filling and Intent Classification"
                         className="w-full h-full object-cover"
                     />
@@ -756,8 +815,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Pairwise Regression"
                         className="w-full h-full object-cover"
                     />
@@ -777,8 +838,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Document Retrieval"
                         className="w-full h-full object-cover"
                     />
@@ -798,8 +861,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Pairwise Classification"
                         className="w-full h-full object-cover"
                     />
@@ -819,8 +884,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Content-based Image Retrieval"
                         className="w-full h-full object-cover"
                     />
@@ -840,8 +907,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Website Rating"
                         className="w-full h-full object-cover"
                     />
@@ -861,8 +930,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="ASR Hypotheses Selection"
                         className="w-full h-full object-cover"
                     />
@@ -882,8 +953,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Text-to-Image Generation"
                         className="w-full h-full object-cover"
                     />
@@ -903,8 +976,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Search Page Ranking"
                         className="w-full h-full object-cover"
                     />
@@ -924,8 +999,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Visual Ranker"
                         className="w-full h-full object-cover"
                     />
@@ -966,8 +1043,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Freeform Metadata"
                         className="w-full h-full object-cover"
                     />
@@ -987,8 +1066,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="PDF Classification"
                         className="w-full h-full object-cover"
                     />
@@ -1008,8 +1089,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Tabular Data"
                         className="w-full h-full object-cover"
                     />
@@ -1029,8 +1112,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="HTML Entity Recognition"
                         className="w-full h-full object-cover"
                     />
@@ -1050,8 +1135,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="HTML Classification"
                         className="w-full h-full object-cover"
                     />
@@ -1092,8 +1179,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Time Series Forecasting"
                         className="w-full h-full object-cover"
                     />
@@ -1113,8 +1202,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Change Point Detection"
                         className="w-full h-full object-cover"
                     />
@@ -1134,8 +1225,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Activity Recognition"
                         className="w-full h-full object-cover"
                     />
@@ -1155,8 +1248,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Signal Quality"
                         className="w-full h-full object-cover"
                     />
@@ -1176,8 +1271,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Outliers and Anomaly Detection"
                         className="w-full h-full object-cover"
                     />
@@ -1197,8 +1294,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Time Series Classification"
                         className="w-full h-full object-cover"
                     />
@@ -1218,8 +1317,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Time Series Labeling"
                         className="w-full h-full object-cover"
                     />
@@ -1258,8 +1359,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Video Classification"
                         className="w-full h-full object-cover"
                     />
@@ -1279,8 +1382,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Video Timeline Segmentation"
                         className="w-full h-full object-cover"
                     />
@@ -1300,8 +1405,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Video Object Detection and Tracking"
                         className="w-full h-full object-cover"
                     />
@@ -1321,8 +1428,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Video Action Recognition"
                         className="w-full h-full object-cover"
                     />
@@ -1342,8 +1451,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Video Captioning"
                         className="w-full h-full object-cover"
                     />
@@ -1363,8 +1474,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Video Anomaly Detection"
                         className="w-full h-full object-cover"
                     />
@@ -1405,8 +1518,10 @@ export function AiDomainsSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Supervised LLM Fine-Tuning"
                         className="w-full h-full object-cover"
                     />
@@ -1426,8 +1541,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Human Preferences collection for RLHF"
                         className="w-full h-full object-cover"
                     />
@@ -1447,8 +1564,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="RAG Retrieval"
                         className="w-full h-full object-cover"
                     />
@@ -1468,8 +1587,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="LLM Response Moderation"
                         className="w-full h-full object-cover"
                     />
@@ -1489,8 +1610,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="LLM Response Grading"
                         className="w-full h-full object-cover"
                     />
@@ -1510,8 +1633,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Side-by-Side LLM Output Comparison"
                         className="w-full h-full object-cover"
                     />
@@ -1531,8 +1656,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Evaluate RAG with Human Feedback"
                         className="w-full h-full object-cover"
                     />
@@ -1552,8 +1679,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Evaluate RAG with Ragas"
                         className="w-full h-full object-cover"
                     />
@@ -1573,8 +1702,10 @@ export function AiDomainsSection() {
 
                 <div className="group relative rounded-lg border overflow-hidden transition-all hover:shadow-md">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                    <img
+                    <Image
                         src="/placeholder.svg?height=200&width=300"
+                        width={300}
+                        height={200}
                         alt="Custom Training Data Creation"
                         className="w-full h-full object-cover"
                     />

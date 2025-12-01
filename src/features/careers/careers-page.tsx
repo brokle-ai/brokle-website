@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  ArrowRight, 
-  Users, 
+import {
+  ArrowRight,
+  Users,
   Linkedin,
   Twitter,
   Upload,
@@ -13,6 +13,7 @@ import {
   BriefcaseIcon,
   MapPin
 } from "lucide-react"
+import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -113,7 +114,7 @@ export default function CareersPage() {
             <Badge className="mb-4">Careers</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Team & Shape the Future!</h1>
             <p className="text-xl text-muted-foreground mb-8">
-                At Brokle, we're building the next generation of AI data labeling tools. Join us in our mission to accelerate AI development through better data.
+                At Brokle, we&apos;re building the next generation of AI data labeling tools. Join us in our mission to accelerate AI development through better data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="gap-2">
@@ -141,7 +142,7 @@ export default function CareersPage() {
               <Badge className="mb-4">Why Join Us</Badge>
               <h2 className="text-3xl font-bold mb-4">What Makes Brokle Special</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                We're not just building a product, we're building a team that values innovation, collaboration, and
+                We&apos;re not just building a product, we&apos;re building a team that values innovation, collaboration, and
                 impact.
               </p>
             </div>
@@ -216,7 +217,7 @@ export default function CareersPage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    We're growing rapidly, offering abundant opportunities for career advancement and the chance to make
+                    We&apos;re growing rapidly, offering abundant opportunities for career advancement and the chance to make
                     a meaningful impact on the future of AI.
                   </CardDescription>
                 </CardContent>
@@ -348,7 +349,7 @@ export default function CareersPage() {
               // No Openings View
               <Card className="border-dashed">
                 <CardHeader className="text-center">
-                  <CardTitle>We're not hiring at the moment, but we'd love to stay in touch!</CardTitle>
+                  <CardTitle>We&apos;re not hiring at the moment, but we&apos;d love to stay in touch!</CardTitle>
                   <CardDescription>
                     Join our talent pool to be notified when new positions open up that match your skills and interests.
                   </CardDescription>
@@ -433,32 +434,36 @@ export default function CareersPage() {
 
             {/* Team Photos Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img
+              <div className="aspect-square rounded-lg overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=300"
                   alt="Team building activity"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img
+              <div className="aspect-square rounded-lg overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=300"
                   alt="Office environment"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img
+              <div className="aspect-square rounded-lg overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=300"
                   alt="Team lunch"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img
+              <div className="aspect-square rounded-lg overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=300"
                   alt="Company offsite"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -471,19 +476,20 @@ export default function CareersPage() {
                 <Card className="bg-background/60 backdrop-blur">
                   <CardContent className="pt-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
-                        <img
+                      <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 relative">
+                        <Image
                           src="/placeholder.svg?height=100&width=100"
                           alt="Sarah Chen"
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
                         />
                       </div>
                       <div>
                         <h4 className="font-semibold text-lg">Sarah Chen</h4>
                         <p className="text-sm text-muted-foreground mb-4">Senior ML Engineer, 2 years at Brokle</p>
                         <p className="text-muted-foreground">
-                          "Working at Brokle has been the highlight of my career. I get to solve challenging ML problems
-                          while collaborating with brilliant minds who are passionate about AI."
+                          &quot;Working at Brokle has been the highlight of my career. I get to solve challenging ML problems
+                          while collaborating with brilliant minds who are passionate about AI.&quot;
                         </p>
                       </div>
                     </div>
@@ -493,19 +499,20 @@ export default function CareersPage() {
                 <Card className="bg-background/60 backdrop-blur">
                   <CardContent className="pt-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
-                        <img
+                      <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 relative">
+                        <Image
                           src="/placeholder.svg?height=100&width=100"
                           alt="Michael Rodriguez"
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
                         />
                       </div>
                       <div>
                         <h4 className="font-semibold text-lg">Michael Rodriguez</h4>
                         <p className="text-sm text-muted-foreground mb-4">Product Designer, 1.5 years at Brokle</p>
                         <p className="text-muted-foreground">
-                          "The culture at Brokle encourages creativity and innovation. I've grown so much as a designer
-                          by working on complex problems and getting feedback from our amazing users."
+                          &quot;The culture at Brokle encourages creativity and innovation. I&apos;ve grown so much as a designer
+                          by working on complex problems and getting feedback from our amazing users.&quot;
                         </p>
                       </div>
                     </div>
@@ -798,7 +805,7 @@ export default function CareersPage() {
                 <AccordionContent>
                   <p className="text-muted-foreground">
                     Our hiring process typically includes an initial screening call with a recruiter, followed by a
-                    technical or role-specific interview, and a final interview with the team you'll be working with.
+                    technical or role-specific interview, and a final interview with the team you&apos;ll be working with.
                     For engineering roles, we also include a technical assessment. The entire process usually takes 2-3
                     weeks.
                   </p>
@@ -817,11 +824,11 @@ export default function CareersPage() {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger>What's the onboarding process like?</AccordionTrigger>
+                <AccordionTrigger>What&apos;s the onboarding process like?</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
                     New team members go through a comprehensive onboarding program that includes product training,
-                    company culture sessions, and team introductions. You'll be paired with a buddy who will help you
+                    company culture sessions, and team introductions. You&apos;ll be paired with a buddy who will help you
                     navigate your first few weeks at Brokle.
                   </p>
                 </AccordionContent>
@@ -832,13 +839,13 @@ export default function CareersPage() {
                 <AccordionContent>
                   <p className="text-muted-foreground">
                     Yes, we do sponsor work visas for exceptional candidates. Please note your visa requirements in your
-                    application, and we'll discuss the details during the interview process.
+                    application, and we&apos;ll discuss the details during the interview process.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-5">
-                <AccordionTrigger>What's the company culture like?</AccordionTrigger>
+                <AccordionTrigger>What&apos;s the company culture like?</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
                     We value collaboration, innovation, and impact. Our team is passionate about AI and data labeling,

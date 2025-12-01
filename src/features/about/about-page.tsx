@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Globe, Heart, Lightbulb, Play, Users } from "lucide-react"
+import Image from "next/image"
 
 export default function AboutPage() {
   return (
@@ -13,7 +14,7 @@ export default function AboutPage() {
             <Badge className="mb-4">Our Story</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Brokle</h1>
             <p className="text-xl text-muted-foreground">
-              We're on a mission to make data labeling faster, more accurate, and more accessible for AI teams of all
+              We&apos;re on a mission to make data labeling faster, more accurate, and more accessible for AI teams of all
               sizes.
             </p>
           </div>
@@ -33,15 +34,17 @@ export default function AboutPage() {
                 accelerating the development of AI that benefits humanity.
               </p>
               <p className="text-lg text-muted-foreground">
-                We're committed to making advanced data labeling technology accessible to organizations of all sizes,
+                We&apos;re committed to making advanced data labeling technology accessible to organizations of all sizes,
                 from startups to enterprises, and supporting the entire AI development lifecycle.
               </p>
             </div>
 
             <div className="relative rounded-lg border bg-background p-1 shadow-lg">
-              <img
+              <Image
                 src="/placeholder.svg?height=500&width=600"
                 alt="Brokle Team Collaboration"
+                width={600}
+                height={500}
                 className="rounded-lg w-full h-auto"
               />
             </div>
@@ -71,7 +74,7 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    We're constantly pushing the boundaries of what's possible in data labeling, leveraging the latest
+                    We&apos;re constantly pushing the boundaries of what&apos;s possible in data labeling, leveraging the latest
                     advances in AI to make our platform more powerful and efficient.
                   </CardDescription>
                 </CardContent>
@@ -101,7 +104,7 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base">
-                    Our customers' success is our success. We're dedicated to providing exceptional support and building
+                    Our customers&apos; success is our success. We&apos;re dedicated to providing exceptional support and building
                     features that address real-world needs.
                   </CardDescription>
                 </CardContent>
@@ -135,11 +138,12 @@ export default function AboutPage() {
                     challenges of creating high-quality training datasets. Frustrated by the limitations of existing
                     tools, they set out to build a better solution.
                   </p>
-                  <div className="rounded-lg border overflow-hidden">
-                    <img
+                  <div className="relative rounded-lg border overflow-hidden aspect-[2/1]">
+                    <Image
                       src="/placeholder.svg?height=300&width=600"
                       alt="Brokle Founding Team"
-                      className="w-full h-auto"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -159,11 +163,12 @@ export default function AboutPage() {
                     Their feedback was invaluable in shaping our platform and prioritizing features that solved real
                     problems.
                   </p>
-                  <div className="rounded-lg border overflow-hidden">
-                    <img
+                  <div className="relative rounded-lg border overflow-hidden aspect-[2/1]">
+                    <Image
                       src="/placeholder.svg?height=300&width=600"
                       alt="Brokle Early Team"
-                      className="w-full h-auto"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -183,8 +188,8 @@ export default function AboutPage() {
                     include advanced security, compliance, and collaboration capabilities. This period saw rapid growth
                     in our team and customer base.
                   </p>
-                  <div className="rounded-lg border overflow-hidden">
-                    <img src="/placeholder.svg?height=300&width=600" alt="Brokle Office" className="w-full h-auto" />
+                  <div className="relative rounded-lg border overflow-hidden aspect-[2/1]">
+                    <Image src="/placeholder.svg?height=300&width=600" alt="Brokle Office" fill className="object-cover" />
                   </div>
                 </div>
               </div>
@@ -199,14 +204,15 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold mb-2">Today & Beyond</h3>
                   <p className="text-muted-foreground mb-4">
                     Today, Brokle is used by thousands of organizations worldwide, from startups to Fortune 500
-                    companies. We're continuing to innovate and expand our platform, with a focus on AI-assisted
+                    companies. We&apos;re continuing to innovate and expand our platform, with a focus on AI-assisted
                     labeling, multimodal data support, and enterprise features.
                   </p>
-                  <div className="rounded-lg border overflow-hidden">
-                    <img
+                  <div className="relative rounded-lg border overflow-hidden aspect-[2/1]">
+                    <Image
                       src="/placeholder.svg?height=300&width=600"
                       alt="Brokle Team Today"
-                      className="w-full h-auto"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -224,7 +230,7 @@ export default function AboutPage() {
               <Badge className="mb-4">Our Team</Badge>
               <h2 className="text-3xl font-bold mb-4">Leadership</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Meet the team driving Brokle's mission forward.
+                Meet the team driving Brokle&apos;s mission forward.
               </p>
             </div>
 
@@ -232,11 +238,12 @@ export default function AboutPage() {
               {/* Team Member 1 */}
               <Card className="text-center">
                 <CardHeader className="pb-2">
-                  <div className="mx-auto rounded-full overflow-hidden w-32 h-32 mb-4">
-                    <img
+                  <div className="mx-auto rounded-full overflow-hidden w-32 h-32 mb-4 relative">
+                    <Image
                       src="/placeholder.svg?height=200&width=200"
                       alt="Sarah Chen"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <CardTitle>Sarah Chen</CardTitle>
@@ -252,11 +259,12 @@ export default function AboutPage() {
               {/* Team Member 2 */}
               <Card className="text-center">
                 <CardHeader className="pb-2">
-                  <div className="mx-auto rounded-full overflow-hidden w-32 h-32 mb-4">
-                    <img
+                  <div className="mx-auto rounded-full overflow-hidden w-32 h-32 mb-4 relative">
+                    <Image
                       src="/placeholder.svg?height=200&width=200"
                       alt="Michael Rodriguez"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <CardTitle>Michael Rodriguez</CardTitle>
@@ -272,11 +280,12 @@ export default function AboutPage() {
               {/* Team Member 3 */}
               <Card className="text-center">
                 <CardHeader className="pb-2">
-                  <div className="mx-auto rounded-full overflow-hidden w-32 h-32 mb-4">
-                    <img
+                  <div className="mx-auto rounded-full overflow-hidden w-32 h-32 mb-4 relative">
+                    <Image
                       src="/placeholder.svg?height=200&width=200"
                       alt="Emily Johnson"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <CardTitle>Emily Johnson</CardTitle>
@@ -299,7 +308,7 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="mb-4">Global Presence</Badge>
-              <h2 className="text-3xl font-bold mb-4">We're Worldwide</h2>
+              <h2 className="text-3xl font-bold mb-4">We&apos;re Worldwide</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 With offices and team members across the globe, we support customers in over 50 countries.
               </p>
@@ -337,7 +346,7 @@ export default function AboutPage() {
             <Badge className="mb-4">Careers</Badge>
             <h2 className="text-3xl font-bold mb-6">Join Our Team</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              We're always looking for talented individuals who are passionate about AI and data labeling.
+              We&apos;re always looking for talented individuals who are passionate about AI and data labeling.
             </p>
             <Button size="lg" className="gap-2">
               View Open Positions <ArrowRight className="h-4 w-4" />
@@ -352,7 +361,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Have questions about Brokle or want to learn more about our company? We'd love to hear from you.
+              Have questions about Brokle or want to learn more about our company? We&apos;d love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="gap-2">

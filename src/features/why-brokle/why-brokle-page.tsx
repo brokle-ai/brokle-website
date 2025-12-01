@@ -68,7 +68,7 @@ export default function WhyBroklePage() {
                 <Badge className="mb-4">AI-Powered</Badge>
                 <h2 className="text-3xl font-bold mb-6">Advanced ML-Assisted Labeling</h2>
                 <p className="text-lg mb-6">
-                  Brokle transforms data labeling with intelligent automation that learns from your team's work, becoming more accurate over time.
+                  Brokle transforms data labeling with intelligent automation that learns from your team&apos;s work, becoming more accurate over time.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -368,14 +368,14 @@ export default function WhyBroklePage() {
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                     <div>
                       <span className="font-medium">Community-Tested Core</span>
-                      <p className="text-muted-foreground">Benefit from a foundation that's been battle-tested by thousands of organizations.</p>
+                      <p className="text-muted-foreground">Benefit from a foundation that&apos;s been battle-tested by thousands of organizations.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                     <div>
                       <span className="font-medium">Enhanced Capabilities</span>
-                      <p className="text-muted-foreground">We've extended the core with powerful features for enterprise teams and advanced use cases.</p>
+                      <p className="text-muted-foreground">We&apos;ve extended the core with powerful features for enterprise teams and advanced use cases.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -410,7 +410,7 @@ export default function WhyBroklePage() {
             <Card>
               <CardContent className="pt-6">
                 <p className="mb-6">
-                  "Brokle reduced our annotation time by 75% while improving accuracy. The AI-assisted labeling is a game-changer for our computer vision projects."
+                  &quot;Brokle reduced our annotation time by 75% while improving accuracy. The AI-assisted labeling is a game-changer for our computer vision projects.&quot;
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -427,7 +427,7 @@ export default function WhyBroklePage() {
             <Card>
               <CardContent className="pt-6">
                 <p className="mb-6">
-                  "The enterprise features made all the difference for our team. We can now collaborate across departments while maintaining strict access controls."
+                  &quot;The enterprise features made all the difference for our team. We can now collaborate across departments while maintaining strict access controls.&quot;
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -444,7 +444,7 @@ export default function WhyBroklePage() {
             <Card>
               <CardContent className="pt-6">
                 <p className="mb-6">
-                  "Being able to handle all our data types in one platform has streamlined our entire ML pipeline. Brokle is now central to our annotation strategy."
+                  &quot;Being able to handle all our data types in one platform has streamlined our entire ML pipeline. Brokle is now central to our annotation strategy.&quot;
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">

@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { BarChart3, Brain, Settings, Users } from "lucide-react"
+import Image from "next/image"
 
 export function QualityControlSection() {
   return (
@@ -65,9 +66,11 @@ export function QualityControlSection() {
           </div>
 
           <div className="relative rounded-xl border bg-background shadow-lg overflow-hidden">
-            <img
+            <Image
               src="/placeholder.svg?height=500&width=600"
               alt="Quality Control Dashboard"
+              width={600}
+              height={500}
               className="w-full h-auto"
             />
           </div>

@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  ArrowRight, 
-  CheckCircle, 
-  Users, 
-  Database, 
-  Cloud, 
-  Shield, 
+import {
+  ArrowRight,
+  CheckCircle,
+  Users,
+  Database,
+  Cloud,
+  Shield,
   FileText,
   Play,
   Code,
@@ -20,8 +20,9 @@ import {
   Server,
   Headset,
   Lock,
-  Image
+  Image as ImageIcon
 } from "lucide-react"
+import Image from "next/image"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -54,19 +55,19 @@ export default function EnterprisePage() {
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {/* Enterprise logos - using placeholders */}
             <div className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/placeholder.svg?height=40&width=120" alt="Enterprise 1" className="h-full" />
+              <Image src="/placeholder.svg?height=40&width=120" alt="Enterprise 1" width={120} height={40} className="h-full" />
             </div>
             <div className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/placeholder.svg?height=40&width=120" alt="Enterprise 2" className="h-full" />
+              <Image src="/placeholder.svg?height=40&width=120" alt="Enterprise 2" width={120} height={40} className="h-full" />
             </div>
             <div className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/placeholder.svg?height=40&width=120" alt="Enterprise 3" className="h-full" />
+              <Image src="/placeholder.svg?height=40&width=120" alt="Enterprise 3" width={120} height={40} className="h-full" />
             </div>
             <div className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/placeholder.svg?height=40&width=120" alt="Enterprise 4" className="h-full" />
+              <Image src="/placeholder.svg?height=40&width=120" alt="Enterprise 4" width={120} height={40} className="h-full" />
             </div>
             <div className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/placeholder.svg?height=40&width=120" alt="Enterprise 5" className="h-full" />
+              <Image src="/placeholder.svg?height=40&width=120" alt="Enterprise 5" width={120} height={40} className="h-full" />
             </div>
           </div>
         </div>
@@ -250,9 +251,11 @@ export default function EnterprisePage() {
                   <CardTitle className="text-lg">SOC 2</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="SOC 2 Certification"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -263,9 +266,11 @@ export default function EnterprisePage() {
                   <CardTitle className="text-lg">GDPR</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="GDPR Compliance"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -276,9 +281,11 @@ export default function EnterprisePage() {
                   <CardTitle className="text-lg">HIPAA</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="HIPAA Compliance"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -289,9 +296,11 @@ export default function EnterprisePage() {
                   <CardTitle className="text-lg">ISO 27001</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="ISO 27001 Certification"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -307,9 +316,11 @@ export default function EnterprisePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
               <div className="relative rounded-xl border bg-background shadow-lg overflow-hidden">
-                <img
+                <Image
                   src="/placeholder.svg?height=500&width=600"
                   alt="Scalability Dashboard"
+                  width={600}
+                  height={500}
                   className="w-full h-auto"
                 />
                 <div className="absolute bottom-4 right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-lg">
@@ -387,7 +398,7 @@ export default function EnterprisePage() {
             <Badge className="mb-4">Integration</Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Custom AI & ML Model Integration</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Seamlessly connect your existing ML infrastructure with Brokle's annotation platform.
+              Seamlessly connect your existing ML infrastructure with Brokle&apos;s annotation platform.
             </p>
           </div>
 
@@ -629,7 +640,7 @@ console.log(\`Registered model: \${model.id}\`);`}
             <Badge className="mb-4">Deployment</Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Flexible Deployment Options</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choose the deployment model that best fits your organization's requirements.
+              Choose the deployment model that best fits your organization&apos;s requirements.
             </p>
           </div>
 
@@ -748,7 +759,7 @@ console.log(\`Registered model: \${model.id}\`);`}
             <Card className="bg-background/60 backdrop-blur border hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-4">
-                  <Image className="h-6 w-6" width={24} height={24} />
+                  <ImageIcon className="h-6 w-6" />
                 </div>
                 <CardTitle>Computer Vision 🖼️</CardTitle>
               </CardHeader>
@@ -961,7 +972,7 @@ console.log(\`Registered model: \${model.id}\`);`}
               <Badge className="mb-4">Get in Touch</Badge>
               <h2 className="text-3xl font-bold mb-6">Talk to Our Enterprise Team</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Our enterprise team is ready to help you implement Brokle at scale. Fill out the form and we'll be in
+                Our enterprise team is ready to help you implement Brokle at scale. Fill out the form and we&apos;ll be in
                 touch shortly.
               </p>
 

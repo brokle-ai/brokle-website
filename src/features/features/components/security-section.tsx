@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowRight, FileText, Lock, Shield, Users } from "lucide-react"
+import Image from "next/image"
 
 export function SecuritySection() {
   return (
@@ -16,9 +17,11 @@ export function SecuritySection() {
                   <CardTitle className="text-lg">SOC 2</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="SOC 2 Certification"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -29,9 +32,11 @@ export function SecuritySection() {
                   <CardTitle className="text-lg">GDPR</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="GDPR Compliance"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -42,9 +47,11 @@ export function SecuritySection() {
                   <CardTitle className="text-lg">HIPAA</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="HIPAA Compliance"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -55,9 +62,11 @@ export function SecuritySection() {
                   <CardTitle className="text-lg">ISO 27001</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="ISO 27001 Certification"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>

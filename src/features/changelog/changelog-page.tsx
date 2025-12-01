@@ -48,7 +48,7 @@ export default function ChangelogPage() {
                 <div>
                   <h3 className="font-medium text-lg">Advanced AI-Assisted Labeling</h3>
                   <p className="text-muted-foreground">
-                    We've completely revamped our AI-assisted labeling system with more accurate predictions and support
+                    We&apos;ve completely revamped our AI-assisted labeling system with more accurate predictions and support
                     for custom models.
                   </p>
                 </div>
@@ -307,7 +307,7 @@ export default function ChangelogPage() {
               <Badge className="mb-4">Coming Soon</Badge>
               <h2 className="text-3xl font-bold mb-4">Product Roadmap</h2>
               <p className="text-xl text-muted-foreground">
-                Get a sneak peek at what we're working on for future releases.
+                Get a sneak peek at what we&apos;re working on for future releases.
               </p>
             </div>
 
@@ -374,7 +374,7 @@ export default function ChangelogPage() {
             </div>
 
             <div className="mt-8 text-center">
-              <p className="text-muted-foreground mb-4">Have a feature request? We'd love to hear from you!</p>
+              <p className="text-muted-foreground mb-4">Have a feature request? We&apos;d love to hear from you!</p>
               <Button>Submit Feature Request</Button>
             </div>
           </div>

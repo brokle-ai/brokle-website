@@ -7,8 +7,8 @@ export default function NotFoundPage() {
       <h1 className="mb-6 text-9xl font-bold text-primary">404</h1>
       <h2 className="mb-8 text-3xl font-semibold">Page Not Found</h2>
       <p className="mx-auto mb-8 max-w-md text-muted-foreground">
-        The page you're looking for doesn't exist or has been moved. 
-        Don't worry, you can find plenty of other things on our homepage.
+        The page you&apos;re looking for doesn&apos;t exist or has been moved.
+        Don&apos;t worry, you can find plenty of other things on our homepage.
       </p>
       <div className="space-x-4">
         <Link href="/">

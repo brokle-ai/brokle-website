@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
                 <p>
-                  This Privacy Policy describes how Brokle ("we", "our", or "us") collects, uses, and shares your personal information when you use our website, products, or services. We respect your privacy and are committed to protecting your personal information.
+                  This Privacy Policy describes how Brokle (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) collects, uses, and shares your personal information when you use our website, products, or services. We respect your privacy and are committed to protecting your personal information.
                 </p>
                 <p>
                   By using our services, you agree to the collection and use of information in accordance with this policy. We will not use or share your information with anyone except as described in this Privacy Policy.
@@ -137,7 +137,7 @@ export default function PrivacyPolicyPage() {
               </section>
 
               <section className="mb-10">
-                <h2 className="text-2xl font-bold mb-4">8. Children's Privacy</h2>
+                <h2 className="text-2xl font-bold mb-4">8. Children&apos;s Privacy</h2>
                 <p>
                   Our services are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us.
                 </p>
@@ -146,7 +146,7 @@ export default function PrivacyPolicyPage() {
               <section className="mb-10">
                 <h2 className="text-2xl font-bold mb-4">9. Changes to This Privacy Policy</h2>
                 <p>
-                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.
+                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. You are advised to review this Privacy Policy periodically for any changes.
                 </p>
               </section>
 

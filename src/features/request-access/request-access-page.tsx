@@ -91,7 +91,7 @@ export default function RequestAccessPage() {
             <div className="md:order-2 order-1">
               <div className="bg-muted/30 p-8 rounded-lg mb-8">
                 <Badge className="mb-4">Free Access</Badge>
-                <h2 className="text-2xl font-bold mb-4">What's Included</h2>
+                <h2 className="text-2xl font-bold mb-4">What&apos;s Included</h2>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -200,7 +200,7 @@ export default function RequestAccessPage() {
                   </div>
                 </div>
                 <p className="mb-6">
-                  "The platform has transformed our annotation workflow. We've been able to reduce our annotation time by 60% while improving quality."
+                  &quot;The platform has transformed our annotation workflow. We&apos;ve been able to reduce our annotation time by 60% while improving quality.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center mr-3">
@@ -225,7 +225,7 @@ export default function RequestAccessPage() {
                   </div>
                 </div>
                 <p className="mb-6">
-                  "The AI-assisted labeling has been a game-changer for our research team. It's intuitive, powerful, and incredibly accurate."
+                  &quot;The AI-assisted labeling has been a game-changer for our research team. It&apos;s intuitive, powerful, and incredibly accurate.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center mr-3">
@@ -250,7 +250,7 @@ export default function RequestAccessPage() {
                   </div>
                 </div>
                 <p className="mb-6">
-                  "Our team was up and running in minutes. The interface is clean, the tools are powerful, and the support is excellent."
+                  &quot;Our team was up and running in minutes. The interface is clean, the tools are powerful, and the support is excellent.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center mr-3">
@@ -288,7 +288,7 @@ export default function RequestAccessPage() {
               </CardHeader>
               <CardContent>
                 <p>
-                  We review all access requests within 24-48 business hours. Once approved, you'll receive an email with instructions to set up your account and get started.
+                  We review all access requests within 24-48 business hours. Once approved, you&apos;ll receive an email with instructions to set up your account and get started.
                 </p>
               </CardContent>
             </Card>
@@ -302,7 +302,7 @@ export default function RequestAccessPage() {
               </CardHeader>
               <CardContent>
                 <p>
-                  At the end of your free access period, you can choose to upgrade to a paid plan or downgrade to our free tier. We'll send you a reminder before your access expires so you can make a decision.
+                  At the end of your free access period, you can choose to upgrade to a paid plan or downgrade to our free tier. We&apos;ll send you a reminder before your access expires so you can make a decision.
                 </p>
               </CardContent>
             </Card>
@@ -330,7 +330,7 @@ export default function RequestAccessPage() {
               </CardHeader>
               <CardContent>
                 <p>
-                  During your free access period, you'll have access to our email support, documentation, and a 30-minute onboarding session with one of our product specialists to help you get started.
+                  During your free access period, you&apos;ll have access to our email support, documentation, and a 30-minute onboarding session with one of our product specialists to help you get started.
                 </p>
               </CardContent>
             </Card>

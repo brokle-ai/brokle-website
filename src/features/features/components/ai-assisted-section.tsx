@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { BarChart3, Brain, Settings, Zap } from "lucide-react"
+import Image from "next/image"
 
 export function AiAssistedSection() {
   return (
@@ -66,7 +67,7 @@ export function AiAssistedSection() {
           </div>
 
           <div className="relative rounded-xl border bg-background shadow-lg overflow-hidden">
-            <img src="/placeholder.svg?height=500&width=600" alt="AI-Assisted Labeling" className="w-full h-auto" />
+            <Image src="/placeholder.svg?height=500&width=600" alt="AI-Assisted Labeling" width={600} height={500} className="w-full h-auto" />
             <div className="absolute bottom-4 right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-lg">
               <span className="font-medium">80% faster labeling</span>
             </div>

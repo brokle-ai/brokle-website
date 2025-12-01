@@ -9,7 +9,7 @@ export function FeatureFaq() {
           <Badge className="mb-4">FAQ</Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Find answers to common questions about Brokle's features and capabilities.
+            Find answers to common questions about Brokle&apos;s features and capabilities.
           </p>
         </div>
 
@@ -19,7 +19,7 @@ export function FeatureFaq() {
               <AccordionTrigger>How does AI-assisted labeling work?</AccordionTrigger>
               <AccordionContent>
                 <p className="text-muted-foreground">
-                  Brokle's AI-assisted labeling uses pre-trained models to automatically generate initial labels for
+                  Brokle&apos;s AI-assisted labeling uses pre-trained models to automatically generate initial labels for
                   your data. These pre-labels are then presented to human annotators for review and correction,
                   significantly reducing manual work. The system continuously learns from corrections to improve over
                   time.

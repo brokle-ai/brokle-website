@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { BarChart3, MessageSquare, Settings, Users } from "lucide-react"
+import Image from "next/image"
 
 export function CollaborationSection() {
   return (
@@ -8,9 +9,11 @@ export function CollaborationSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="order-2 md:order-1">
             <div className="relative rounded-xl border bg-background shadow-lg overflow-hidden">
-              <img
+              <Image
                 src="/placeholder.svg?height=500&width=600"
                 alt="Collaboration Dashboard"
+                width={600}
+                height={500}
                 className="w-full h-auto"
               />
             </div>

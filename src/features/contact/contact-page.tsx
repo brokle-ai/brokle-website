@@ -31,7 +31,7 @@ export default function ContactPage() {
             <Badge className="mb-4">Contact Us</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
             <p className="text-xl text-muted-foreground">
-              Have questions or need help? We're here to support you every step of the way.
+              Have questions or need help? We&apos;re here to support you every step of the way.
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base mb-4">
-                  Send us an email and we'll get back to you within 24 hours.
+                  Send us an email and we&apos;ll get back to you within 24 hours.
                 </CardDescription>
                 <a href="mailto:support@brokle.ai" className="text-primary hover:underline">
                   support@brokle.ai
@@ -100,7 +100,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Fill out the form and we'll get back to you as soon as possible.
+                Fill out the form and we&apos;ll get back to you as soon as possible.
               </p>
 
               <div className="space-y-6">
@@ -259,7 +259,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  45 King's Road
+                  45 King&apos;s Road
                   <br />
                   Floor 3<br />
                   London, SW3 4RP

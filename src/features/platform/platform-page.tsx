@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  ArrowRight, 
-  CheckCircle, 
-  Users, 
-  Brain, 
-  Database, 
-  Workflow, 
-  Cloud, 
-  Shield, 
-  BarChart, 
+import {
+  ArrowRight,
+  CheckCircle,
+  Users,
+  Brain,
+  Database,
+  Workflow,
+  Cloud,
+  Shield,
+  BarChart,
   Server,
   FileText,
   Play,
   Lock,
   BarChart3,
   Mic,
-  Image,
+  Image as ImageIcon,
   Download,
   CheckSquare,
   Pen,
@@ -25,6 +25,7 @@ import {
   UploadCloud
 } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from "next/image"
 
 export default function PlatformPage() {
   return (
@@ -457,9 +458,11 @@ export default function PlatformPage() {
                   </div>
 
                   <div className="rounded-lg border overflow-hidden">
-                    <img
+                    <Image
                       src="/placeholder.svg?height=400&width=500"
                       alt="Annotation Interface"
+                      width={500}
+                      height={400}
                       className="w-full h-auto"
                     />
                   </div>
@@ -526,9 +529,11 @@ export default function PlatformPage() {
                   </div>
 
                   <div className="rounded-lg border overflow-hidden">
-                    <img
+                    <Image
                       src="/placeholder.svg?height=400&width=500"
                       alt="Project Management Dashboard"
+                      width={500}
+                      height={400}
                       className="w-full h-auto"
                     />
                   </div>
@@ -595,9 +600,11 @@ export default function PlatformPage() {
                   </div>
 
                   <div className="rounded-lg border overflow-hidden">
-                    <img
+                    <Image
                       src="/placeholder.svg?height=400&width=500"
                       alt="AI Automation Interface"
+                      width={500}
+                      height={400}
                       className="w-full h-auto"
                     />
                   </div>
@@ -664,9 +671,11 @@ export default function PlatformPage() {
                   </div>
 
                   <div className="rounded-lg border overflow-hidden">
-                    <img
+                    <Image
                       src="/placeholder.svg?height=400&width=500"
                       alt="Analytics Dashboard"
+                      width={500}
+                      height={400}
                       className="w-full h-auto"
                     />
                   </div>
@@ -690,7 +699,7 @@ export default function PlatformPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto mb-12">
             <Button variant="outline" className="h-auto py-6 flex flex-col gap-2">
-              <Image className="h-6 w-6" />
+              <ImageIcon className="h-6 w-6" />
               <span>Images</span>
             </Button>
             <Button variant="outline" className="h-auto py-6 flex flex-col gap-2">
@@ -715,7 +724,7 @@ export default function PlatformPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Image className="h-5 w-5 text-primary" />
+                  <ImageIcon className="h-5 w-5 text-primary" />
                   <CardTitle>Computer Vision</CardTitle>
                 </div>
               </CardHeader>
@@ -1019,9 +1028,11 @@ export default function PlatformPage() {
                   <CardTitle className="text-lg">SOC 2</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="SOC 2 Certification"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -1032,9 +1043,11 @@ export default function PlatformPage() {
                   <CardTitle className="text-lg">GDPR</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="GDPR Compliance"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -1045,9 +1058,11 @@ export default function PlatformPage() {
                   <CardTitle className="text-lg">HIPAA</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="HIPAA Compliance"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -1058,9 +1073,11 @@ export default function PlatformPage() {
                   <CardTitle className="text-lg">ISO 27001</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
+                  <Image
                     src="/placeholder.svg?height=100&width=100"
                     alt="ISO 27001 Certification"
+                    width={100}
+                    height={100}
                     className="h-16 w-auto mx-auto"
                   />
                 </CardContent>
@@ -1101,8 +1118,8 @@ export default function PlatformPage() {
                   </svg>
                 </div>
                 <p className="text-lg">
-                  "Brokle has cut our data labeling time in half while improving accuracy. The AI-assisted labeling is a
-                  game-changer for our computer vision models."
+                  &quot;Brokle has cut our data labeling time in half while improving accuracy. The AI-assisted labeling is a
+                  game-changer for our computer vision models.&quot;
                 </p>
               </CardContent>
               <CardFooter className="border-t pt-4">
@@ -1135,8 +1152,8 @@ export default function PlatformPage() {
                   </svg>
                 </div>
                 <p className="text-lg">
-                  "The flexibility to handle multiple data types in one platform has streamlined our entire ML pipeline.
-                  Brokle's enterprise features give us the security we need."
+                  &quot;The flexibility to handle multiple data types in one platform has streamlined our entire ML pipeline.
+                  Brokle&apos;s enterprise features give us the security we need.&quot;
                 </p>
               </CardContent>
               <CardFooter className="border-t pt-4">
@@ -1169,8 +1186,8 @@ export default function PlatformPage() {
                   </svg>
                 </div>
                 <p className="text-lg">
-                  "We've tried several annotation platforms, but Brokle's collaboration features and intuitive UI have
-                  made it our team's favorite by far."
+                  &quot;We&apos;ve tried several annotation platforms, but Brokle&apos;s collaboration features and intuitive UI have
+                  made it our team&apos;s favorite by far.&quot;
                 </p>
               </CardContent>
               <CardFooter className="border-t pt-4">

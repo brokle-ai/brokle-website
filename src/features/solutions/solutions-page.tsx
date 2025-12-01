@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  ArrowRight, 
-  CheckCircle, 
-  Users, 
-  Database, 
-  Cloud, 
-  Image,
-  Shield, 
+import {
+  ArrowRight,
+  CheckCircle,
+  Users,
+  Database,
+  Cloud,
+  Image as ImageIcon,
+  Shield,
   FileText,
   Play,
   Code,
@@ -19,6 +19,7 @@ import {
   Settings
 } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from "next/image"
 
 export default function SolutionsPage() {
   return (
@@ -113,9 +114,11 @@ export default function SolutionsPage() {
             </div>
 
             <div className="relative rounded-lg border bg-background p-1 shadow-lg">
-              <img
+              <Image
                 src="/placeholder.svg?height=500&width=600"
                 alt="ML Pipeline Diagram"
+                width={600}
+                height={500}
                 className="rounded-lg w-full h-auto"
               />
             </div>
@@ -210,9 +213,11 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="rounded-lg border overflow-hidden">
-                  <img
+                  <Image
                     src="/placeholder.svg?height=400&width=500"
                     alt="Healthcare Solution"
+                    width={500}
+                    height={400}
                     className="w-full h-auto"
                   />
                 </div>
@@ -283,7 +288,7 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="rounded-lg border overflow-hidden">
-                  <img src="/placeholder.svg?height=400&width=500" alt="Retail Solution" className="w-full h-auto" />
+                  <Image src="/placeholder.svg?height=400&width=500" alt="Retail Solution" width={500} height={400} className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>
@@ -352,9 +357,11 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="rounded-lg border overflow-hidden">
-                  <img
+                  <Image
                     src="/placeholder.svg?height=400&width=500"
                     alt="Manufacturing Solution"
+                    width={500}
+                    height={400}
                     className="w-full h-auto"
                   />
                 </div>
@@ -425,9 +432,11 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="rounded-lg border overflow-hidden">
-                  <img
+                  <Image
                     src="/placeholder.svg?height=400&width=500"
                     alt="Financial Services Solution"
+                    width={500}
+                    height={400}
                     className="w-full h-auto"
                   />
                 </div>
@@ -498,9 +507,11 @@ export default function SolutionsPage() {
                 </div>
 
                 <div className="rounded-lg border overflow-hidden">
-                  <img
+                  <Image
                     src="/placeholder.svg?height=400&width=500"
                     alt="Automotive Solution"
+                    width={500}
+                    height={400}
                     className="w-full h-auto"
                   />
                 </div>
@@ -525,7 +536,7 @@ export default function SolutionsPage() {
             <Card>
               <CardHeader>
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-4">
-                  <Image className="h-6 w-6" />
+                  <ImageIcon className="h-6 w-6" />
                 </div>
                 <CardTitle>Computer Vision Training</CardTitle>
               </CardHeader>
@@ -696,9 +707,11 @@ export default function SolutionsPage() {
             </div>
 
             <div className="relative rounded-lg border bg-background p-1 shadow-lg">
-              <img
+              <Image
                 src="/placeholder.svg?height=500&width=600"
                 alt="Enterprise Scale"
+                width={600}
+                height={500}
                 className="rounded-lg w-full h-auto"
               />
             </div>
@@ -719,11 +732,12 @@ export default function SolutionsPage() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Card className="overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img
+              <div className="h-48 overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=600"
                   alt="TechVision Case Study"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <CardHeader>
@@ -744,11 +758,12 @@ export default function SolutionsPage() {
             </Card>
 
             <Card className="overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img
+              <div className="h-48 overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=600"
                   alt="MedAI Case Study"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <CardHeader>
@@ -769,11 +784,12 @@ export default function SolutionsPage() {
             </Card>
 
             <Card className="overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img
+              <div className="h-48 overflow-hidden relative">
+                <Image
                   src="/placeholder.svg?height=300&width=600"
                   alt="FinTech Case Study"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <CardHeader>

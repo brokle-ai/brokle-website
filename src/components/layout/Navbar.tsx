@@ -125,7 +125,7 @@ export default function Navbar() {
                         Latest news, tips, and insights from the Brokle team
                       </ListItem>
                       <ListItem href="/community" title="Community">
-                        Join our community of users and contribute to Brokle's growth
+                        Join our community of users and contribute to Brokle&apos;s growth
                       </ListItem>
                       <ListItem href="/support" title="Support">
                         Get help from our customer support team
