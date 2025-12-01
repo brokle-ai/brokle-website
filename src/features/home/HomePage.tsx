@@ -1,22 +1,20 @@
 import { HeroSection } from "./sections/HeroSection"
+import { SocialProofSection } from "./sections/SocialProofSection"
 import { KeyFeaturesSection } from "./sections/KeyFeaturesSection"
-import { AIDomainsSupportSection } from "./sections/AIDomainsSupportSection"
-import { HowItWorksSection } from "./sections/HowItWorksSection"
-import { UseCasesSection } from "./sections/UseCasesSection"
-import { DifferentiationSection } from "./sections/DifferentiationSection"
-import { TestimonialsSection } from "./sections/TestimonialsSection"
+import { IntegrationsSection } from "./sections/IntegrationsSection"
+import { CodeExampleSection } from "./sections/CodeExampleSection"
+import { OpenSourceSection } from "./sections/OpenSourceSection"
 import { FinalCTASection } from "./sections/FinalCTASection"
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <SocialProofSection />
       <KeyFeaturesSection />
-      <AIDomainsSupportSection />
-      <HowItWorksSection />
-      <UseCasesSection />
-      <DifferentiationSection />
-      <TestimonialsSection />
+      <IntegrationsSection />
+      <CodeExampleSection />
+      <OpenSourceSection />
       <FinalCTASection />
     </>
   )

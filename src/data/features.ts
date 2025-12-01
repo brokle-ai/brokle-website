@@ -1,41 +1,62 @@
-import { Sparkles, Users, Layers, Zap, Code, Shield } from "lucide-react"
-import { Feature } from "@/types/feature"
+import { Search, MessageSquare, CheckSquare, BarChart3, Activity, Shield, type LucideIcon } from "lucide-react"
+
+export interface Feature {
+  icon: LucideIcon
+  title: string
+  description: string
+}
 
 export const features: Feature[] = [
   {
-    icon: Sparkles,
-    title: "AI-Assisted Annotation",
-    description:
-      "Leverage machine learning to automate up to 80% of your labeling tasks with intelligent pre-labeling and suggestions.",
+    icon: Search,
+    title: "Tracing & Debugging",
+    description: "Detailed traces of every LLM call. Debug complex chains, identify failures, and understand model behavior.",
   },
   {
-    icon: Users,
-    title: "Collaborative Workspaces",
-    description:
-      "Work seamlessly with your team using real-time collaboration, role-based access control, and quality assurance workflows.",
+    icon: MessageSquare,
+    title: "Prompt Management",
+    description: "Version, test, and deploy prompts. Track changes, compare performance, and roll back instantly.",
   },
   {
-    icon: Layers,
-    title: "Multi-Format Support",
-    description:
-      "Label any data type with specialized tools for images, text, audio, video, and time-series data in one unified platform.",
+    icon: CheckSquare,
+    title: "Evaluation Framework",
+    description: "Automated evals with LLM-as-judge. Build custom evaluators, run A/B tests, and score outputs at scale.",
   },
   {
-    icon: Zap,
-    title: "Automation & Workflows",
-    description:
-      "Create custom workflows with automated task assignment, review processes, and quality control to maximize efficiency.",
+    icon: BarChart3,
+    title: "Cost & Latency Analytics",
+    description: "Track spend across providers. Monitor latency, identify expensive calls, and optimize costs.",
   },
   {
-    icon: Code,
-    title: "API & Integrations",
-    description:
-      "Connect with your existing ML pipeline through our comprehensive API and pre-built integrations with popular tools and services.",
+    icon: Activity,
+    title: "Production Monitoring",
+    description: "Real-time dashboards and alerts. Know when things break before your users do.",
   },
   {
     icon: Shield,
     title: "Enterprise Security",
-    description:
-      "Protect your sensitive data with SOC 2 compliance, end-to-end encryption, and granular access controls.",
+    description: "SOC 2, GDPR, HIPAA ready. Self-host option, SSO, and role-based access control.",
   },
+]
+
+export const integrations = [
+  { name: "OpenAI", category: "Provider" },
+  { name: "Anthropic", category: "Provider" },
+  { name: "Google AI", category: "Provider" },
+  { name: "Azure OpenAI", category: "Provider" },
+  { name: "LangChain", category: "Framework" },
+  { name: "LangGraph", category: "Framework" },
+  { name: "LlamaIndex", category: "Framework" },
+  { name: "Vercel AI SDK", category: "Framework" },
+  { name: "OpenTelemetry", category: "Standard" },
+  { name: "Python SDK", category: "SDK" },
+  { name: "TypeScript SDK", category: "SDK" },
+  { name: "REST API", category: "SDK" },
+]
+
+export const stats = [
+  { label: "GitHub Stars", value: "1.2k+" },
+  { label: "Traces Processed", value: "10M+" },
+  { label: "Active Teams", value: "500+" },
+  { label: "Uptime", value: "99.9%" },
 ]

@@ -43,6 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Light theme - Clean neutral with modern refinements */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -78,6 +79,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Dark theme - Clean neutral */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -119,4 +121,30 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom scrollbar for better aesthetics */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+/* Code block styling */
+.prose pre {
+  @apply bg-muted/50 rounded-lg border;
+}
+
+.prose code {
+  @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
 }

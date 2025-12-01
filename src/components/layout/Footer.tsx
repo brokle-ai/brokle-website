@@ -1,161 +1,159 @@
 import Link from 'next/link'
-import { Button } from '../ui/button'
-import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react"
+import { Activity, Github, Twitter, Linkedin } from "lucide-react"
+
+const footerLinks = {
+  product: [
+    { name: "Tracing", href: "/tracing" },
+    { name: "Prompt Management", href: "/prompt-management" },
+    { name: "Evaluation", href: "/evaluation" },
+    { name: "Analytics", href: "/analytics" },
+    { name: "Pricing", href: "/pricing" },
+  ],
+  developers: [
+    { name: "Documentation", href: "https://docs.brokle.ai", external: true },
+    { name: "Python SDK", href: "https://docs.brokle.ai/sdk/python", external: true },
+    { name: "JavaScript SDK", href: "https://docs.brokle.ai/sdk/javascript", external: true },
+    { name: "API Reference", href: "https://docs.brokle.ai/api", external: true },
+    { name: "Status", href: "https://status.brokle.ai", external: true },
+  ],
+  company: [
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Changelog", href: "/changelog" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
+  ],
+  legal: [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Security", href: "/security" },
+  ],
+}
+
+const socialLinks = [
+  { name: "GitHub", href: "https://github.com/brokle-ai/brokle", icon: Github },
+  { name: "Twitter", href: "https://twitter.com/brokle_ai", icon: Twitter },
+  { name: "LinkedIn", href: "https://linkedin.com/company/brokle", icon: Linkedin },
+]
 
 export default function Footer() {
   return (
-    <footer className="bg-muted/50 border-t">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
+    <footer className="border-t bg-muted/30">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
+          {/* Brand Column */}
+          <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-primary rounded-md p-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6 text-primary-foreground"
-                >
-                  <path d="M12 5v14" />
-                  <path d="M5 12h14" />
-                </svg>
+              <div className="bg-primary rounded-lg p-1.5">
+                <Activity className="h-5 w-5 text-primary-foreground" />
               </div>
               <span className="font-bold text-xl">Brokle</span>
             </Link>
-            <p className="mt-4 text-muted-foreground">
-              The fastest and most flexible annotation platform for AI and ML teams.
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+              Open source LLM observability platform. Debug and improve your AI applications.
             </p>
-            <div className="flex space-x-4 mt-6">
-              <Button variant="ghost" size="icon" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" aria-label="GitHub">
-                <Github className="h-5 w-5" />
-              </Button>
+            <div className="flex gap-3 mt-6">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-5 w-5" />
+                </Link>
+              ))}
             </div>
           </div>
 
+          {/* Product Column */}
           <div>
-            <h3 className="font-medium text-lg mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/features" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/enterprise" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Enterprise
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/changelog" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Changelog
-                </Link>
-              </li>
+            <h3 className="font-semibold text-sm mb-4">Product</h3>
+            <ul className="space-y-3">
+              {footerLinks.product.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Developers Column */}
           <div>
-            <h3 className="font-medium text-lg mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/platform" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="/platform" className="text-muted-foreground hover:text-foreground transition-colors">
-                  API Reference
-                </Link>
-              </li>
-              <li>
-                <Link href="/why-brokle" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Why Brokle
-                </Link>
-              </li>
-              <li>
-                <Link href="/changelog" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Community
-                </Link>
-              </li>
+            <h3 className="font-semibold text-sm mb-4">Developers</h3>
+            <ul className="space-y-3">
+              {footerLinks.developers.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Company Column */}
           <div>
-            <h3 className="font-medium text-lg mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
+            <h3 className="font-semibold text-sm mb-4">Company</h3>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Column */}
+          <div>
+            <h3 className="font-semibold text-sm mb-4">Legal</h3>
+            <ul className="space-y-3">
+              {footerLinks.legal.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2025 Brokle, Inc. All rights reserved.
+              © {new Date().getFullYear()} Brokle, Inc. All rights reserved.
             </p>
-            <div className="mt-4 md:mt-0 flex space-x-4">
-              <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <Link href="/privacy" className="hover:text-foreground transition-colors">
                 Privacy
               </Link>
-              <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/terms" className="hover:text-foreground transition-colors">
                 Terms
               </Link>
-              <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Cookie Settings
+              <Link href="/security" className="hover:text-foreground transition-colors">
+                Security
               </Link>
             </div>
           </div>

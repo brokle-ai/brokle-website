@@ -20,8 +20,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brokle - Modern Business Solutions",
-  description: "Discover Brokle's innovative platform for modern business solutions. Transform your operations with our cutting-edge technology and comprehensive service offerings.",
+  title: "Brokle - Open Source LLM Observability Platform",
+  description: "Debug and improve your LLM applications with traces, evals, prompt management, and metrics. Open source, OpenTelemetry-native, enterprise-ready.",
+  keywords: ["LLM observability", "LLM tracing", "prompt management", "AI monitoring", "LLM evaluation", "OpenTelemetry"],
+  authors: [{ name: "Brokle" }],
+  openGraph: {
+    title: "Brokle - Open Source LLM Observability Platform",
+    description: "Debug and improve your LLM applications with traces, evals, prompt management, and metrics.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Brokle",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brokle - Open Source LLM Observability Platform",
+    description: "Debug and improve your LLM applications with traces, evals, prompt management, and metrics.",
+  },
 };
 
 export default function RootLayout({
