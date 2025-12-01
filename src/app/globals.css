@@ -8,6 +8,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -41,6 +42,14 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Gradient section colors */
+  --color-gradient-warm-from: var(--gradient-warm-from);
+  --color-gradient-warm-to: var(--gradient-warm-to);
+  --color-gradient-cool-from: var(--gradient-cool-from);
+  --color-gradient-cool-to: var(--gradient-cool-to);
+  --color-gradient-dark-from: var(--gradient-dark-from);
+  --color-gradient-dark-to: var(--gradient-dark-to);
 }
 
 /* Light theme - Clean neutral with modern refinements */
@@ -48,6 +57,14 @@
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  /* Gradient backgrounds for sections (Labelbox-inspired) */
+  --gradient-warm-from: oklch(0.988 0 0);
+  --gradient-warm-to: oklch(0.968 0 0);
+  --gradient-cool-from: oklch(0.98 0.002 250);
+  --gradient-cool-to: oklch(0.96 0.004 250);
+  --gradient-dark-from: oklch(0.145 0 0);
+  --gradient-dark-to: oklch(0.18 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -83,6 +100,14 @@
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
+
+  /* Gradient backgrounds for sections (Labelbox-inspired - dark mode) */
+  --gradient-warm-from: oklch(0.16 0.01 50);
+  --gradient-warm-to: oklch(0.18 0.015 50);
+  --gradient-cool-from: oklch(0.16 0.01 250);
+  --gradient-cool-to: oklch(0.18 0.015 250);
+  --gradient-dark-from: oklch(0.1 0 0);
+  --gradient-dark-to: oklch(0.12 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);

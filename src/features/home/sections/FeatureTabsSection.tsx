@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { DisplayHeading } from "@/components/shared"
 import {
   Search,
   BarChart3,
@@ -14,8 +15,6 @@ import {
   Copy,
   ExternalLink,
   Clock,
-  DollarSign,
-  Activity,
   CheckCircle,
   AlertCircle
 } from "lucide-react"
@@ -334,12 +333,22 @@ export function FeatureTabsSection() {
   const activeFeature = featureTabs.find(t => t.id === activeTab)
 
   return (
-    <section className="py-20 md:py-28">
-      <div className="container px-4 mx-auto">
+    <section className="py-20 md:py-28 lg:py-32 border-t">
+      <div className="container px-4 mx-auto max-w-7xl">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <DisplayHeading as="h2" className="mb-4">
+            Complete visibility into your AI stack
+          </DisplayHeading>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Everything you need to build, debug, and optimize production AI applications.
+          </p>
+        </div>
+
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           {/* Tab Navigation */}
           <div className="flex justify-center mb-8">
-            <TabsList className="h-auto p-1 bg-muted/50 flex-wrap">
+            <TabsList className="h-auto p-1 bg-muted flex-wrap">
               {featureTabs.map((tab) => (
                 <TabsTrigger
                   key={tab.id}

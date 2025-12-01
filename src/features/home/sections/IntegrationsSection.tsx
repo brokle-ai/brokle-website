@@ -1,122 +1,110 @@
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { DisplayHeading } from "@/components/shared"
 
-// Expanded provider list similar to Helicone
 const providers = [
-  { name: "OpenAI", abbr: "OAI" },
-  { name: "Anthropic", abbr: "ANT" },
-  { name: "Google AI", abbr: "GGL" },
-  { name: "Azure OpenAI", abbr: "AZR" },
-  { name: "AWS Bedrock", abbr: "AWS" },
-  { name: "Cohere", abbr: "COH" },
-  { name: "Mistral", abbr: "MIS" },
-  { name: "Groq", abbr: "GRQ" },
-  { name: "Together AI", abbr: "TOG" },
-  { name: "Fireworks", abbr: "FWK" },
-  { name: "Replicate", abbr: "REP" },
-  { name: "Ollama", abbr: "OLL" },
+  "OpenAI",
+  "Anthropic",
+  "Google AI",
+  "Azure OpenAI",
+  "AWS Bedrock",
+  "Cohere",
+  "Mistral",
+  "Groq",
+  "Together AI",
+  "Fireworks",
+  "Replicate",
+  "Ollama",
 ]
 
 const frameworks = [
-  { name: "LangChain", abbr: "LC" },
-  { name: "LlamaIndex", abbr: "LI" },
-  { name: "Vercel AI", abbr: "VAI" },
-  { name: "OpenTelemetry", abbr: "OTL" },
-  { name: "Instructor", abbr: "INS" },
-  { name: "DSPy", abbr: "DSP" },
+  "LangChain",
+  "LlamaIndex",
+  "Vercel AI",
+  "OpenTelemetry",
+  "Instructor",
+  "DSPy",
 ]
 
 const sdks = [
-  { name: "Python", badge: "pip install brokle" },
-  { name: "TypeScript", badge: "npm i @brokle/sdk" },
-  { name: "REST API", badge: "OpenAPI 3.0" },
+  { name: "Python", command: "pip install brokle" },
+  { name: "TypeScript", command: "npm i @brokle/sdk" },
+  { name: "REST API", command: "OpenAPI 3.0" },
 ]
 
 export function IntegrationsSection() {
   return (
-    <section className="py-20 md:py-28 bg-muted/30">
-      <div className="container px-4 mx-auto">
-        <div className="text-center mb-12">
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-            Works With Your Stack
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            One SDK for 100+ models
-          </h2>
+    <section className="py-20 md:py-28 lg:py-32 border-t">
+      <div className="container px-4 mx-auto max-w-7xl">
+        <div className="text-center mb-16">
+          <DisplayHeading as="h2" className="mb-4">
+            Works with your entire stack
+          </DisplayHeading>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Native integrations with every major AI provider and framework.
             Drop-in compatibility with your existing code.
           </p>
         </div>
 
-        {/* Provider Cloud - Similar to Helicone's floating logos */}
-        <div className="max-w-5xl mx-auto mb-10">
-          <p className="text-sm font-medium text-muted-foreground mb-6 text-center uppercase tracking-wider">
+        {/* Providers */}
+        <div className="mb-12">
+          <p className="text-sm text-muted-foreground uppercase tracking-wider mb-6 text-center">
             AI Providers
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 max-w-4xl mx-auto">
             {providers.map((provider) => (
-              <div
-                key={provider.name}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-full border bg-background hover:border-foreground/20 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 transition-all cursor-default"
+              <span
+                key={provider}
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
               >
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-muted to-muted-foreground/20 flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-foreground/70">{provider.abbr}</span>
-                </div>
-                <span className="text-sm font-medium">{provider.name}</span>
-              </div>
+                {provider}
+              </span>
             ))}
           </div>
         </div>
 
-        {/* Frameworks - Compact pills */}
-        <div className="max-w-4xl mx-auto mb-10">
-          <p className="text-sm font-medium text-muted-foreground mb-6 text-center uppercase tracking-wider">
+        {/* Frameworks */}
+        <div className="mb-12">
+          <p className="text-sm text-muted-foreground uppercase tracking-wider mb-6 text-center">
             Frameworks & Standards
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 max-w-3xl mx-auto">
             {frameworks.map((framework) => (
-              <div
-                key={framework.name}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-full border bg-background hover:border-foreground/20 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 transition-all cursor-default"
+              <span
+                key={framework}
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
               >
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-primary">{framework.abbr}</span>
-                </div>
-                <span className="text-sm font-medium">{framework.name}</span>
-              </div>
+                {framework}
+              </span>
             ))}
           </div>
         </div>
 
-        {/* SDKs - Highlighted */}
-        <div className="max-w-3xl mx-auto">
-          <p className="text-sm font-medium text-muted-foreground mb-6 text-center uppercase tracking-wider">
+        {/* SDKs */}
+        <div className="mb-12">
+          <p className="text-sm text-muted-foreground uppercase tracking-wider mb-6 text-center">
             Official SDKs
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
             {sdks.map((sdk) => (
-              <div
-                key={sdk.name}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-dashed border-muted-foreground/20 bg-background hover:border-primary/50 transition-colors"
-              >
-                <span className="font-semibold">{sdk.name}</span>
-                <code className="text-xs px-2 py-1 rounded bg-muted font-mono text-muted-foreground">
-                  {sdk.badge}
+              <div key={sdk.name} className="text-center">
+                <span className="text-sm font-semibold block mb-1">{sdk.name}</span>
+                <code className="text-xs text-muted-foreground font-mono">
+                  {sdk.command}
                 </code>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="gap-2" asChild>
-            <Link href="/integrations">
-              View All Integrations <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+        <div className="text-center">
+          <Link
+            href="/integrations"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors"
+          >
+            View all integrations
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

@@ -1,22 +1,33 @@
 import { HeroSection } from "./sections/HeroSection"
-import { SocialProofSection } from "./sections/SocialProofSection"
+import { LogoBarSection } from "./sections/LogoBarSection"
+import { ResearchSection } from "./sections/ResearchSection"
+import { PlatformOverviewSection } from "./sections/PlatformOverviewSection"
 import { FeatureTabsSection } from "./sections/FeatureTabsSection"
-import { KeyFeaturesSection } from "./sections/KeyFeaturesSection"
 import { IntegrationsSection } from "./sections/IntegrationsSection"
-import { CodeExampleSection } from "./sections/CodeExampleSection"
-import { OpenSourceSection } from "./sections/OpenSourceSection"
 import { FinalCTASection } from "./sections/FinalCTASection"
 
 export default function HomePage() {
   return (
     <>
+      {/* 1. Hero - Asymmetric layout with serif headline */}
       <HeroSection />
-      <SocialProofSection />
+
+      {/* 2. Logo Bar - Enterprise trust signals */}
+      <LogoBarSection />
+
+      {/* 3. Research/Innovation - Warm gradient background */}
+      <ResearchSection />
+
+      {/* 4. Platform Overview - Two-column split */}
+      <PlatformOverviewSection />
+
+      {/* 5. Features with Interactive Tabs */}
       <FeatureTabsSection />
-      <KeyFeaturesSection />
+
+      {/* 6. Integrations - Logo cloud */}
       <IntegrationsSection />
-      <CodeExampleSection />
-      <OpenSourceSection />
+
+      {/* 7. Final CTA */}
       <FinalCTASection />
     </>
   )
