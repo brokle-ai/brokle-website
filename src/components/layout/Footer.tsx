@@ -145,7 +145,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Brokle, Inc. All rights reserved.
+              © 2025 Brokle, Inc. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-4">
               <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
