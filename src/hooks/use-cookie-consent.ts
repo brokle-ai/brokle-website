@@ -1,3 +1,5 @@
+'use client';
+
 import { CookiePreferences } from "@/components/cookie-consent";
 import { useEffect, useState } from "react";
 import { applyPreferences } from '@/lib/cookie-service';

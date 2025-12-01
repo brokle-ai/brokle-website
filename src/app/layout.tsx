@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/context/theme-provider";
 import { CookieConsentProvider } from "@/providers/cookie-consent-provider";
 import { Toaster } from "sonner";
 import { CookieConsent } from "@/components/cookie-consent";
+import { AnalyticsTracker } from "@/components/analytics-tracker";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CookieConsentProvider>
+          <AnalyticsTracker />
           <ThemeProvider defaultTheme="system" storageKey="brokle-ui-theme">
             <div className="flex min-h-screen flex-col">
               <Navbar />

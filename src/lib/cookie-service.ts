@@ -34,7 +34,7 @@ export const initializeAnalytics = async () => {
           measurementIds: [measurementId],
           gtagConfig: {
             anonymize_ip: true,
-            send_page_view: true,
+            send_page_view: false,
             cookie_flags: 'SameSite=None;Secure'
           }
         })
