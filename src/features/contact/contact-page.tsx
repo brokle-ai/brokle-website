@@ -6,14 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle,
+  Github,
   Mail,
-  MapPin,
   MessageSquare,
-  Phone,
 } from "lucide-react";
 import Link from "next/link"
 import { ContactForm } from "./contact-form";
@@ -21,15 +19,15 @@ import { ContactForm } from "./contact-form";
 export default function ContactPage() {
   return (
     <>
-
       {/* Hero Section */}
       <section className="py-16 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4">Contact Us</Badge>
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Contact Us</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
             <p className="text-xl text-muted-foreground">
-              Have questions or need help? We&apos;re here to support you every step of the way.
+              Have questions about Brokle? Need help with your LLM observability setup?
+              We&apos;re here to help.
             </p>
           </div>
         </div>
@@ -39,7 +37,7 @@ export default function ContactPage() {
       <section className="py-12">
         <div className="container px-4 mx-auto">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="text-center">
+            <Card className="text-center border-0 shadow-none bg-muted/30">
               <CardHeader>
                 <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center text-primary mb-4">
                   <Mail className="h-8 w-8" />
@@ -50,41 +48,47 @@ export default function ContactPage() {
                 <CardDescription className="text-base mb-4">
                   Send us an email and we&apos;ll get back to you within 24 hours.
                 </CardDescription>
-                <a href="mailto:support@brokle.ai" className="text-primary hover:underline">
-                  support@brokle.ai
+                <a href="mailto:hello@brokle.ai" className="text-primary hover:underline">
+                  hello@brokle.ai
                 </a>
               </CardContent>
             </Card>
 
-            <Card className="text-center">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center text-primary mb-4">
-                  <Phone className="h-8 w-8" />
-                </div>
-                <CardTitle>Call Us</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base mb-4">
-                  Our support team is available Monday-Friday, 9am-5pm PT.
-                </CardDescription>
-                <a href="tel:+18005551234" className="text-primary hover:underline">
-                  +1 (800) 555-1234
-                </a>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
+            <Card className="text-center border-0 shadow-none bg-muted/30">
               <CardHeader>
                 <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center text-primary mb-4">
                   <MessageSquare className="h-8 w-8" />
                 </div>
-                <CardTitle>Live Chat</CardTitle>
+                <CardTitle>Discord Community</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base mb-4">
-                  Chat with our support team in real-time for immediate assistance.
+                  Join our Discord for real-time support from the community and team.
                 </CardDescription>
-                <Button variant="outline">Start Chat</Button>
+                <Button variant="outline" asChild>
+                  <Link href="https://discord.gg/brokle" target="_blank" rel="noopener noreferrer">
+                    Join Discord
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-0 shadow-none bg-muted/30">
+              <CardHeader>
+                <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center text-primary mb-4">
+                  <Github className="h-8 w-8" />
+                </div>
+                <CardTitle>GitHub</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base mb-4">
+                  Found a bug? Have a feature request? Open an issue on GitHub.
+                </CardDescription>
+                <Button variant="outline" asChild>
+                  <Link href="https://github.com/brokle-ai/brokle/issues" target="_blank" rel="noopener noreferrer">
+                    Open Issue
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -92,7 +96,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/30">
         <div className="container px-4 mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
             <div>
@@ -109,7 +113,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium">Product Questions</h3>
                     <p className="text-muted-foreground">
-                      Ask about features, pricing, or how Brokle can address your specific needs.
+                      Ask about tracing, prompt management, evaluations, or analytics features.
                     </p>
                   </div>
                 </div>
@@ -120,18 +124,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Technical Support</h3>
-                    <p className="text-muted-foreground">Get help with technical issues or implementation questions.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 text-primary">
-                    <CheckCircle className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Partnership Inquiries</h3>
                     <p className="text-muted-foreground">
-                      Explore potential partnerships or integration opportunities.
+                      Get help with SDK integration, self-hosting, or debugging issues.
                     </p>
                   </div>
                 </div>
@@ -141,9 +135,21 @@ export default function ContactPage() {
                     <CheckCircle className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Sales Inquiries</h3>
+                    <h3 className="font-medium">Enterprise Inquiries</h3>
                     <p className="text-muted-foreground">
-                      Connect with our sales team to discuss enterprise plans and custom solutions.
+                      Discuss enterprise plans, SSO, compliance, or custom requirements.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 text-primary">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Partnership Opportunities</h3>
+                    <p className="text-muted-foreground">
+                      Explore integrations, partnerships, or investment discussions.
                     </p>
                   </div>
                 </div>
@@ -159,147 +165,65 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Office Locations */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <Badge className="mb-4">Our Offices</Badge>
-            <h2 className="text-3xl font-bold mb-4">Visit Us</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We have offices around the world to better serve our global customers.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <CardTitle>San Francisco</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  123 Market Street
-                  <br />
-                  Suite 400
-                  <br />
-                  San Francisco, CA 94105
-                  <br />
-                  United States
-                </p>
-                <Button variant="outline" size="sm">
-                  Get Directions
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <CardTitle>London</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  45 King&apos;s Road
-                  <br />
-                  Floor 3<br />
-                  London, SW3 4RP
-                  <br />
-                  United Kingdom
-                </p>
-                <Button variant="outline" size="sm">
-                  Get Directions
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <CardTitle>Singapore</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  80 Robinson Road
-                  <br />
-                  #08-01
-                  <br />
-                  Singapore 068898
-                  <br />
-                  Singapore
-                </p>
-                <Button variant="outline" size="sm">
-                  Get Directions
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <Badge className="mb-4">FAQ</Badge>
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">FAQ</Badge>
               <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Find quick answers to common questions.</p>
+              <p className="text-xl text-muted-foreground">Quick answers to common questions.</p>
             </div>
 
             <div className="space-y-6">
-              <Card>
+              <Card className="border-0 shadow-none bg-muted/30">
                 <CardHeader>
-                  <CardTitle>How quickly can I expect a response?</CardTitle>
+                  <CardTitle className="text-lg">How quickly can I expect a response?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    We aim to respond to all inquiries within 24 hours during business days. For urgent technical
-                    support issues, our premium support plans offer faster response times.
+                    We typically respond to all inquiries within 24 hours during business days.
+                    For urgent technical issues, join our Discord for faster community support.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-0 shadow-none bg-muted/30">
                 <CardHeader>
-                  <CardTitle>Can I schedule a demo before contacting sales?</CardTitle>
+                  <CardTitle className="text-lg">Is there a free trial available?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Yes! You can schedule a personalized demo directly from our website. Visit our{" "}
-                    <Link href="/book-demo" className="text-primary hover:underline">
-                      Book a Demo
-                    </Link>{" "}
-                    page to find a time that works for you.
+                    Yes! Our Hobby plan is free forever with 50K traces/month. You can also
+                    self-host the open-source version without any limits.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-0 shadow-none bg-muted/30">
                 <CardHeader>
-                  <CardTitle>Do you offer technical support for free users?</CardTitle>
+                  <CardTitle className="text-lg">Do you offer technical support for open-source users?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Free users have access to our community forums and documentation. Email support is available for all
-                    paid plans, with priority support for Enterprise customers.
+                    Open-source users have access to our Discord community, GitHub discussions,
+                    and documentation. Paid plans include priority email support and dedicated
+                    help from our team.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-0 shadow-none bg-muted/30">
                 <CardHeader>
-                  <CardTitle>How can I report a bug or security issue?</CardTitle>
+                  <CardTitle className="text-lg">How do I report a security issue?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    For bugs, please contact our support team. For security issues, please email security@brokle.ai with
-                    details of the vulnerability.
+                    For security vulnerabilities, please email{" "}
+                    <a href="mailto:security@brokle.ai" className="text-primary hover:underline">
+                      security@brokle.ai
+                    </a>{" "}
+                    with details. We take security seriously and will respond promptly.
                   </p>
                 </CardContent>
               </Card>
@@ -308,17 +232,25 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      {/* CTA Section */}
+      <section className="py-16 bg-muted/30">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Join Our Newsletter</h2>
+            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Stay updated with our latest features, tips, and industry
-              insights.
+              Start tracing your LLM applications in minutes. Free forever with our Hobby plan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input placeholder="Your email address" className="flex-grow" />
-              <Button>Subscribe</Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link href="https://app.brokle.ai/signup">
+                  Start Free
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="https://docs.brokle.ai" target="_blank" rel="noopener noreferrer">
+                  Read the Docs
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

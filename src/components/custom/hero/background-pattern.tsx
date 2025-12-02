@@ -4,10 +4,19 @@ import DotPattern from "@/components/ui/dot-pattern";
 import Particles from "@/components/ui/particles";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export const BackgroundPattern = () => {
   const { resolvedTheme } = useTheme();
-  const isLightTheme = resolvedTheme === "light";
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Default to dark particles for SSR (most users expect dark mode)
+  // This matches the system default and prevents flicker
+  const particleColor = mounted && resolvedTheme === "light" ? "#000" : "#fff";
 
   return (
     <>
@@ -26,7 +35,7 @@ export const BackgroundPattern = () => {
         className="absolute inset-0"
         quantity={100}
         ease={80}
-        color={isLightTheme ? "#000" : "#fff"}
+        color={particleColor}
         refresh
       />
     </>

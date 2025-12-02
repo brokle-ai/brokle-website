@@ -14,7 +14,7 @@ export default function PricingCards() {
       {/* Pricing Cards */}
       <section className="py-12">
         <div className="container px-4 mx-auto">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Tabs defaultValue="monthly" className="w-full">
               <div className="flex justify-center mb-8">
                 <TabsList>
@@ -25,37 +25,43 @@ export default function PricingCards() {
 
               {/* Monthly Plans */}
               <TabsContent value="monthly">
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {pricingTiers.map((tier) => (
-                    <Card key={tier.id} className={tier.highlighted ? "border-primary relative" : ""}>
+                    <Card key={tier.id} className={tier.highlighted ? "border-primary relative shadow-lg" : "relative"}>
                       {tier.badge && (
                         <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">
                           {tier.badge}
                         </div>
                       )}
-                      <CardHeader>
-                        <CardTitle>{tier.name}</CardTitle>
-                        <div className="mt-4 flex items-baseline text-5xl font-extrabold">
-                          {tier.priceDisplay.monthly}
-                          {tier.price.monthly !== null && (
-                            <span className="ml-1 text-xl font-medium text-muted-foreground">/month</span>
+                      <CardHeader className="pb-4">
+                        <CardTitle className="text-xl">{tier.name}</CardTitle>
+                        <div className="mt-4 flex items-baseline">
+                          <span className="text-4xl font-extrabold">
+                            {tier.priceDisplay.monthly}
+                          </span>
+                          {tier.price.monthly !== null && tier.price.monthly !== 0 && (
+                            <span className="ml-1 text-lg font-medium text-muted-foreground">/mo</span>
                           )}
                         </div>
-                        <CardDescription className="mt-4">{tier.description}</CardDescription>
+                        <CardDescription className="mt-2 text-sm">{tier.description}</CardDescription>
                       </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-3">
+                      <CardContent className="pb-4">
+                        <ul className="space-y-2.5">
                           {tier.features.map((feature, index) => (
-                            <li key={index} className="flex items-start gap-3">
-                              <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                              <span>{feature}</span>
+                            <li key={index} className="flex items-start gap-2">
+                              <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                              <span className="text-sm">{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button variant={tier.cta.variant as "default" | "outline"} className="w-full">
-                          <Link href={tier.cta.href} className="w-full">
+                        <Button
+                          variant={tier.cta.variant as "default" | "outline"}
+                          className="w-full"
+                          asChild
+                        >
+                          <Link href={tier.cta.href}>
                             {tier.cta.text}
                           </Link>
                         </Button>
@@ -67,37 +73,43 @@ export default function PricingCards() {
 
               {/* Annual Plans */}
               <TabsContent value="annual">
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {pricingTiers.map((tier) => (
-                    <Card key={tier.id} className={tier.highlighted ? "border-primary relative" : ""}>
+                    <Card key={tier.id} className={tier.highlighted ? "border-primary relative shadow-lg" : "relative"}>
                       {tier.badge && (
                         <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">
                           {tier.badge}
                         </div>
                       )}
-                      <CardHeader>
-                        <CardTitle>{tier.name}</CardTitle>
-                        <div className="mt-4 flex items-baseline text-5xl font-extrabold">
-                          {tier.priceDisplay.annual}
-                          {tier.price.annual !== null && (
-                            <span className="ml-1 text-xl font-medium text-muted-foreground">/month</span>
+                      <CardHeader className="pb-4">
+                        <CardTitle className="text-xl">{tier.name}</CardTitle>
+                        <div className="mt-4 flex items-baseline">
+                          <span className="text-4xl font-extrabold">
+                            {tier.priceDisplay.annual}
+                          </span>
+                          {tier.price.annual !== null && tier.price.annual !== 0 && (
+                            <span className="ml-1 text-lg font-medium text-muted-foreground">/mo</span>
                           )}
                         </div>
-                        <CardDescription className="mt-4">{tier.description}</CardDescription>
+                        <CardDescription className="mt-2 text-sm">{tier.description}</CardDescription>
                       </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-3">
+                      <CardContent className="pb-4">
+                        <ul className="space-y-2.5">
                           {tier.features.map((feature, index) => (
-                            <li key={index} className="flex items-start gap-3">
-                              <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                              <span>{feature}</span>
+                            <li key={index} className="flex items-start gap-2">
+                              <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                              <span className="text-sm">{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button variant={tier.cta.variant as "default" | "outline"} className="w-full">
-                          <Link href={tier.cta.href} className="w-full">
+                        <Button
+                          variant={tier.cta.variant as "default" | "outline"}
+                          className="w-full"
+                          asChild
+                        >
+                          <Link href={tier.cta.href}>
                             {tier.cta.text}
                           </Link>
                         </Button>
@@ -108,41 +120,41 @@ export default function PricingCards() {
               </TabsContent>
             </Tabs>
 
-            <div className="text-center mt-6 text-sm text-muted-foreground">
-              All plans include a 14-day free trial. No credit card required to start.
+            <div className="text-center mt-8 text-sm text-muted-foreground">
+              All paid plans include a 14-day free trial. No credit card required to start.
             </div>
           </div>
         </div>
       </section>
 
       {/* Add-ons Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/30">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4">Add-ons</Badge>
-            <h2 className="text-3xl font-bold mb-4">Customize Your Plan</h2>
-            <p className="text-xl text-muted-foreground">
-              Enhance your Brokle experience with these additional features.
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Add-ons</Badge>
+            <h2 className="text-3xl font-bold mb-4">Scale as you need</h2>
+            <p className="text-lg text-muted-foreground">
+              Need more capacity? Add these to any plan.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {addOns.map((addOn) => (
-              <Card key={addOn.id}>
-                <CardHeader>
-                  <CardTitle>{addOn.name}</CardTitle>
-                  <div className="mt-4 text-2xl font-bold">
+              <Card key={addOn.id} className="border-0 shadow-none bg-background">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg">{addOn.name}</CardTitle>
+                  <div className="mt-2 text-xl font-bold">
                     ${addOn.price}
-                    <span className="text-lg font-medium text-muted-foreground">{addOn.priceUnit}</span>
+                    <span className="text-sm font-medium text-muted-foreground">{addOn.priceUnit}</span>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{addOn.description}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{addOn.description}</p>
                   <ul className="space-y-2">
                     {addOn.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                      <li key={index} className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
