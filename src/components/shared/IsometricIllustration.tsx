@@ -71,16 +71,16 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             <stop offset="100%" stopColor="#10b981" stopOpacity="0.04" />
           </linearGradient>
 
-          {/* Neutral gradient for central hub glow */}
+          {/* Cyan gradient for central hub glow */}
           <radialGradient id="hubGlowGradient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="currentColor" className="text-foreground" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="currentColor" className="text-foreground" stopOpacity="0.02" />
+            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
           </radialGradient>
 
-          {/* Gradient for hub platform surface */}
+          {/* Cyan gradient for hub platform surface */}
           <linearGradient id="hubPlatformGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="currentColor" className="text-foreground" stopOpacity="0.1" />
-            <stop offset="100%" stopColor="currentColor" className="text-foreground" stopOpacity="0.04" />
+            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.03" />
           </linearGradient>
         </defs>
 
@@ -169,28 +169,29 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             strokeWidth="1"
           />
 
-          {/* Inner ring on platform - animated */}
+          {/* Inner ring on platform - animated cyan */}
           <ellipse
             cx="0"
             cy="-10"
             rx="28"
             ry="15"
             fill="none"
-            className="stroke-foreground/[0.2]"
+            stroke="#06b6d4"
+            strokeOpacity="0.4"
             strokeWidth="1.5"
             strokeDasharray="3 2"
           >
             <animate attributeName="stroke-dashoffset" values="0;10" dur="3s" repeatCount="indefinite" />
           </ellipse>
 
-          {/* Central indicator dot - pulsing neutral */}
-          <circle cx="0" cy="-10" r="8" className="fill-foreground/[0.08]">
+          {/* Central indicator dot - pulsing cyan */}
+          <circle cx="0" cy="-10" r="8" fill="#06b6d4" fillOpacity="0.12">
             <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.08;0.15;0.08" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="fill-opacity" values="0.12;0.25;0.12" dur="2s" repeatCount="indefinite" />
           </circle>
-          <circle cx="0" cy="-10" r="5" className="fill-foreground/[0.15]" />
-          <circle cx="0" cy="-10" r="3" className="fill-foreground/30">
-            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
+          <circle cx="0" cy="-10" r="5" fill="#06b6d4" fillOpacity="0.25" />
+          <circle cx="0" cy="-10" r="3" fill="#06b6d4" fillOpacity="0.5">
+            <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite" />
           </circle>
         </g>
 
@@ -476,3 +477,4 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
     </div>
   )
 }
+
