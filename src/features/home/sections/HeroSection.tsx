@@ -1,5 +1,3 @@
-'use client'
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -13,38 +11,30 @@ export function HeroSection() {
           {/* Left side: Content */}
           <div className="text-left">
             <DisplayHeading as="h1" className="mb-6 leading-[1.1]">
-              The observability platform for{" "}
-              <span className="text-foreground/80">AI teams</span>
+              The observability platform{" "}
+              <span className="text-foreground/80">for AI teams</span>
             </DisplayHeading>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
               Debug, evaluate, and optimize your LLM applications with complete visibility.
-              Open source, OpenTelemetry-native, enterprise-ready.
+              OpenTelemetry-native, enterprise-ready.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="gap-2 h-13 px-8 text-base" asChild>
                 <Link href="https://app.brokle.ai/signup">
                   Get Started Free <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="gap-2 h-13 px-8 text-base" asChild>
-                <Link href="https://docs.brokle.ai" target="_blank" rel="noopener noreferrer">
+                <Link href="#demo">
                   Take a Tour
                 </Link>
               </Button>
             </div>
-
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-              <span>No credit card required</span>
-              <span className="text-border">|</span>
-              <span>Self-host available</span>
-              <span className="text-border">|</span>
-              <span>SOC 2 compliant</span>
-            </div>
           </div>
 
-          {/* Right side: Static Illustration */}
+          {/* Right side: Illustration */}
           <div className="hidden lg:block relative">
             <IsometricIllustration className="w-full max-w-lg mx-auto" />
           </div>

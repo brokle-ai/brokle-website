@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link'
-import { Menu, Search, Activity, MessageSquare, CheckSquare, BarChart3, Blocks, Github, Star, ExternalLink } from "lucide-react"
+import { Menu, Search, MessageSquare, CheckSquare, BarChart3, Blocks, Github, Star, ExternalLink } from "lucide-react"
 import { Button } from '@/components/ui/button'
+import { BrokleLogo } from '@/components/ui/brokle-logo'
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ModeToggle } from '@/components/custom/mode-toggle'
 import { Badge } from '@/components/ui/badge'
@@ -105,11 +106,8 @@ export default function NavbarContent({ isScrolled }: NavbarContentProps) {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-primary rounded-lg p-1.5">
-                <Activity className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="font-bold text-xl">Brokle</span>
+            <Link href="/" className="flex items-center">
+              <BrokleLogo variant="full" size="sm" />
             </Link>
           </div>
 
@@ -242,11 +240,8 @@ export default function NavbarContent({ isScrolled }: NavbarContentProps) {
                 <div className="flex flex-col h-full">
                   {/* Mobile Logo */}
                   <div className="px-2 py-6">
-                    <Link href="/" className="flex items-center space-x-2">
-                      <div className="bg-primary rounded-lg p-1.5">
-                        <Activity className="h-5 w-5 text-primary-foreground" />
-                      </div>
-                      <span className="font-bold text-xl">Brokle</span>
+                    <Link href="/" className="flex items-center">
+                      <BrokleLogo variant="full" size="sm" />
                     </Link>
                   </div>
 

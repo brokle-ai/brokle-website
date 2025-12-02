@@ -1,5 +1,8 @@
+"use client";
+
 import Link from 'next/link'
-import { Activity, Github, Twitter, Linkedin } from "lucide-react"
+import { Github, Twitter, Linkedin } from "lucide-react"
+import { BrokleLogo } from '@/components/ui/brokle-logo'
 
 const footerLinks = {
   product: [
@@ -43,11 +46,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-primary rounded-lg p-1.5">
-                <Activity className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="font-bold text-xl">Brokle</span>
+            <Link href="/" className="flex items-center">
+              <BrokleLogo variant="full" size="sm" />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
               Open source LLM observability platform. Debug and improve your AI applications.

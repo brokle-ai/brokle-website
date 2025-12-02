@@ -12,31 +12,31 @@ import { FinalCTASection } from "./sections/FinalCTASection"
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero - Asymmetric layout with IsometricIllustration */}
+      {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. Logo Bar - Marquee animation with company logos */}
+      {/* 2. Logo Bar - Trusted companies */}
       <LogoBarSection />
 
-      {/* 3. Stats Bar - Traction metrics */}
+      {/* 3. Stats - Traction metrics */}
       <StatsSection />
 
-      {/* 4. Research/Innovation - Engineering pillars */}
+      {/* 4. Research - Key innovations */}
       <ResearchSection />
 
       {/* 5. Platform Overview - Cloud vs Self-hosted */}
       <PlatformOverviewSection />
 
-      {/* 6. Features with Interactive Tabs - Code examples + UI previews */}
+      {/* 6. Features with Interactive Tabs */}
       <FeatureTabsSection />
 
-      {/* 7. Use Cases Grid - Target audiences */}
+      {/* 7. Use Cases Grid */}
       <UseCasesSection />
 
-      {/* 8. Integrations - Provider logos and SDKs */}
+      {/* 8. Integrations */}
       <IntegrationsSection />
 
-      {/* 9. Testimonials - Social proof quotes */}
+      {/* 9. Testimonials */}
       <TestimonialsSection />
 
       {/* 10. Final CTA */}
