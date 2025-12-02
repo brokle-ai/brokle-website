@@ -45,6 +45,43 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             <stop offset="0%" stopColor="currentColor" className="text-foreground/6" />
             <stop offset="100%" stopColor="currentColor" className="text-foreground/2" />
           </linearGradient>
+
+          {/* Color-coded card gradients */}
+          {/* Blue for Input/Output - data flow */}
+          <linearGradient id="blueCardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.04" />
+          </linearGradient>
+
+          {/* Purple for Prompts - creativity/AI */}
+          <linearGradient id="purpleCardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.04" />
+          </linearGradient>
+
+          {/* Amber for Metrics - analytics */}
+          <linearGradient id="amberCardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.04" />
+          </linearGradient>
+
+          {/* Green for Evaluation - quality/success */}
+          <linearGradient id="greenCardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#10b981" stopOpacity="0.04" />
+          </linearGradient>
+
+          {/* Neutral gradient for central hub glow */}
+          <radialGradient id="hubGlowGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="currentColor" className="text-foreground" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="currentColor" className="text-foreground" stopOpacity="0.02" />
+          </radialGradient>
+
+          {/* Gradient for hub platform surface */}
+          <linearGradient id="hubPlatformGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="currentColor" className="text-foreground" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="currentColor" className="text-foreground" stopOpacity="0.04" />
+          </linearGradient>
         </defs>
 
         {/* Background grid */}
@@ -57,92 +94,107 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
         {/* === CONNECTION LINES (draw first, behind everything) === */}
         {/* All lines connect to inner ellipse edge (center: 220,165, rx:28, ry:15) */}
         {/* Ellipse bounds: Left ~192, Right ~248, Top ~150, Bottom ~180 */}
-        <g className="text-foreground/[0.12]">
-          {/* Input to Hub - from bottom-center of Input card to top-left of inner ellipse */}
+        <g>
+          {/* Input to Hub - Blue */}
           <path
             id="pathInputToHub"
             d="M 82 95 Q 140 125, 195 155"
             fill="none"
-            stroke="currentColor"
+            stroke="#3b82f6"
+            strokeOpacity="0.3"
             strokeWidth="1.5"
             strokeDasharray="4 4"
           />
-          {/* Output to Hub - from bottom-center of Output card to top-right of inner ellipse */}
+          {/* Output to Hub - Blue */}
           <path
             id="pathOutputToHub"
             d="M 357 95 Q 300 125, 245 155"
             fill="none"
-            stroke="currentColor"
+            stroke="#3b82f6"
+            strokeOpacity="0.3"
             strokeWidth="1.5"
             strokeDasharray="4 4"
           />
-          {/* Prompts to Hub - from top-center of Prompts card to bottom-left of inner ellipse */}
+          {/* Prompts to Hub - Purple */}
           <path
             id="pathPromptsToHub"
             d="M 95 255 Q 140 210, 195 175"
             fill="none"
-            stroke="currentColor"
+            stroke="#8b5cf6"
+            strokeOpacity="0.3"
             strokeWidth="1.5"
             strokeDasharray="4 4"
           />
-          {/* Metrics to Hub - from top of Metrics card to bottom edge of hub platform surface */}
+          {/* Metrics to Hub - Amber */}
           <path
             id="pathMetricsToHub"
             d="M 220 280 L 220 193"
             fill="none"
-            stroke="currentColor"
+            stroke="#f59e0b"
+            strokeOpacity="0.3"
             strokeWidth="1.5"
             strokeDasharray="4 4"
           />
-          {/* Evaluation to Hub - from top-center of Evaluation card to bottom-right of inner ellipse */}
+          {/* Evaluation to Hub - Green */}
           <path
             id="pathEvaluationToHub"
             d="M 345 255 Q 300 210, 245 175"
             fill="none"
-            stroke="currentColor"
+            stroke="#10b981"
+            strokeOpacity="0.3"
             strokeWidth="1.5"
             strokeDasharray="4 4"
           />
         </g>
 
-        {/* === CENTRAL HUB - 3D Isometric Platform === */}
+        {/* === CENTRAL HUB - 3D Isometric Platform (Neutral) === */}
         <g transform="translate(220, 175)" filter="url(#softShadow)">
+          {/* Ambient glow behind platform */}
+          <ellipse cx="0" cy="-5" rx="45" ry="25" fill="url(#hubGlowGradient)" />
+
           {/* Platform shadow */}
           <ellipse cx="0" cy="20" rx="55" ry="30" className="fill-foreground/[0.04]" />
 
           {/* Platform base (3D sides) */}
           <path
             d="M -50 0 L 0 28 L 50 0 L 50 -10 L 0 18 L -50 -10 Z"
-            className="fill-foreground/[0.06]"
+            fill="url(#hubPlatformGradient)"
           />
 
           {/* Platform top surface */}
           <path
             d="M -50 -10 L 0 18 L 50 -10 L 0 -38 Z"
-            fill="url(#hubGradient)"
-            className="stroke-foreground/[0.12]"
+            fill="url(#hubPlatformGradient)"
+            className="stroke-foreground/[0.15]"
             strokeWidth="1"
           />
 
-          {/* Inner ring on platform */}
+          {/* Inner ring on platform - animated */}
           <ellipse
             cx="0"
             cy="-10"
             rx="28"
             ry="15"
-            className="fill-none stroke-foreground/[0.15]"
-            strokeWidth="1"
+            fill="none"
+            className="stroke-foreground/[0.2]"
+            strokeWidth="1.5"
             strokeDasharray="3 2"
-          />
+          >
+            <animate attributeName="stroke-dashoffset" values="0;10" dur="3s" repeatCount="indefinite" />
+          </ellipse>
 
-          {/* Central indicator dot */}
-          <circle cx="0" cy="-10" r="6" className="fill-foreground/[0.15]" />
+          {/* Central indicator dot - pulsing neutral */}
+          <circle cx="0" cy="-10" r="8" className="fill-foreground/[0.08]">
+            <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.08;0.15;0.08" dur="2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="0" cy="-10" r="5" className="fill-foreground/[0.15]" />
           <circle cx="0" cy="-10" r="3" className="fill-foreground/30">
-            <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
           </circle>
         </g>
 
-        {/* === INPUT NODE (Top Left) === */}
+        {/* === INPUT NODE (Top Left) - Blue === */}
         <g transform="translate(40, 35)" filter="url(#softShadow)">
           {/* Card */}
           <rect
@@ -151,25 +203,27 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             width="85"
             height="60"
             rx="8"
-            fill="url(#cardGradient)"
-            className="stroke-foreground/[0.08]"
+            fill="url(#blueCardGradient)"
+            stroke="#3b82f6"
+            strokeOpacity="0.2"
             strokeWidth="1"
           />
 
           {/* Card header bar */}
-          <rect x="10" y="10" width="35" height="5" rx="2.5" className="fill-foreground/[0.12]" />
+          <rect x="10" y="10" width="35" height="5" rx="2.5" fill="#3b82f6" fillOpacity="0.25" />
 
           {/* Card content lines */}
-          <rect x="10" y="22" width="60" height="3" rx="1.5" className="fill-foreground/[0.06]" />
-          <rect x="10" y="30" width="45" height="3" rx="1.5" className="fill-foreground/[0.05]" />
-          <rect x="10" y="38" width="52" height="3" rx="1.5" className="fill-foreground/[0.04]" />
+          <rect x="10" y="22" width="60" height="3" rx="1.5" fill="#3b82f6" fillOpacity="0.15" />
+          <rect x="10" y="30" width="45" height="3" rx="1.5" fill="#3b82f6" fillOpacity="0.12" />
+          <rect x="10" y="38" width="52" height="3" rx="1.5" fill="#3b82f6" fillOpacity="0.08" />
 
           {/* Label */}
           <text
             x="42"
             y="55"
             textAnchor="middle"
-            className="fill-foreground/30"
+            fill="#3b82f6"
+            fillOpacity="0.6"
             fontSize="8"
             fontFamily="ui-monospace, monospace"
           >
@@ -177,7 +231,7 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           </text>
         </g>
 
-        {/* === OUTPUT NODE (Top Right) === */}
+        {/* === OUTPUT NODE (Top Right) - Blue === */}
         <g transform="translate(315, 35)" filter="url(#softShadow)">
           {/* Card */}
           <rect
@@ -186,25 +240,27 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             width="85"
             height="60"
             rx="8"
-            fill="url(#cardGradient)"
-            className="stroke-foreground/[0.08]"
+            fill="url(#blueCardGradient)"
+            stroke="#3b82f6"
+            strokeOpacity="0.2"
             strokeWidth="1"
           />
 
           {/* Card header bar */}
-          <rect x="10" y="10" width="35" height="5" rx="2.5" className="fill-foreground/[0.12]" />
+          <rect x="10" y="10" width="35" height="5" rx="2.5" fill="#3b82f6" fillOpacity="0.25" />
 
           {/* Card content lines */}
-          <rect x="10" y="22" width="60" height="3" rx="1.5" className="fill-foreground/[0.06]" />
-          <rect x="10" y="30" width="50" height="3" rx="1.5" className="fill-foreground/[0.05]" />
-          <rect x="10" y="38" width="55" height="3" rx="1.5" className="fill-foreground/[0.04]" />
+          <rect x="10" y="22" width="60" height="3" rx="1.5" fill="#3b82f6" fillOpacity="0.15" />
+          <rect x="10" y="30" width="50" height="3" rx="1.5" fill="#3b82f6" fillOpacity="0.12" />
+          <rect x="10" y="38" width="55" height="3" rx="1.5" fill="#3b82f6" fillOpacity="0.08" />
 
           {/* Label */}
           <text
             x="42"
             y="55"
             textAnchor="middle"
-            className="fill-foreground/30"
+            fill="#3b82f6"
+            fillOpacity="0.6"
             fontSize="8"
             fontFamily="ui-monospace, monospace"
           >
@@ -212,7 +268,7 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           </text>
         </g>
 
-        {/* === PROMPTS NODE (Bottom Left) === */}
+        {/* === PROMPTS NODE (Bottom Left) - Purple === */}
         <g transform="translate(45, 255)" filter="url(#softShadow)">
           {/* Card */}
           <rect
@@ -221,30 +277,32 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             width="100"
             height="55"
             rx="8"
-            fill="url(#cardGradient)"
-            className="stroke-foreground/[0.08]"
+            fill="url(#purpleCardGradient)"
+            stroke="#8b5cf6"
+            strokeOpacity="0.2"
             strokeWidth="1"
           />
 
           {/* Prompt template icon - document with lines */}
-          <rect x="18" y="15" width="20" height="24" rx="2" className="fill-foreground/[0.06] stroke-foreground/[0.12]" strokeWidth="1" />
-          <rect x="22" y="20" width="12" height="2" rx="1" className="fill-foreground/20" />
-          <rect x="22" y="25" width="10" height="2" rx="1" className="fill-foreground/15" />
-          <rect x="22" y="30" width="8" height="2" rx="1" className="fill-foreground/10" />
+          <rect x="18" y="15" width="20" height="24" rx="2" fill="#8b5cf6" fillOpacity="0.1" stroke="#8b5cf6" strokeOpacity="0.25" strokeWidth="1" />
+          <rect x="22" y="20" width="12" height="2" rx="1" fill="#8b5cf6" fillOpacity="0.4" />
+          <rect x="22" y="25" width="10" height="2" rx="1" fill="#8b5cf6" fillOpacity="0.3" />
+          <rect x="22" y="30" width="8" height="2" rx="1" fill="#8b5cf6" fillOpacity="0.2" />
 
           {/* Version indicator */}
-          <text x="80" y="18" textAnchor="middle" className="fill-foreground/25" fontSize="7" fontWeight="500">v2.1</text>
+          <text x="80" y="18" textAnchor="middle" fill="#8b5cf6" fillOpacity="0.5" fontSize="7" fontWeight="500">v2.1</text>
 
           {/* Template variables */}
-          <rect x="46" y="22" width="40" height="3" rx="1.5" className="fill-foreground/[0.08]" />
-          <rect x="46" y="30" width="30" height="3" rx="1.5" className="fill-foreground/[0.06]" />
+          <rect x="46" y="22" width="40" height="3" rx="1.5" fill="#8b5cf6" fillOpacity="0.15" />
+          <rect x="46" y="30" width="30" height="3" rx="1.5" fill="#8b5cf6" fillOpacity="0.1" />
 
           {/* Label */}
           <text
             x="50"
             y="50"
             textAnchor="middle"
-            className="fill-foreground/25"
+            fill="#8b5cf6"
+            fillOpacity="0.6"
             fontSize="7"
             fontFamily="ui-monospace, monospace"
           >
@@ -252,7 +310,7 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           </text>
         </g>
 
-        {/* === METRICS NODE (Bottom Center) === */}
+        {/* === METRICS NODE (Bottom Center) - Amber === */}
         <g transform="translate(165, 280)" filter="url(#softShadow)">
           {/* Card */}
           <rect
@@ -261,20 +319,21 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             width="110"
             height="70"
             rx="8"
-            fill="url(#cardGradient)"
-            className="stroke-foreground/[0.08]"
+            fill="url(#amberCardGradient)"
+            stroke="#f59e0b"
+            strokeOpacity="0.2"
             strokeWidth="1"
           />
 
           {/* Mini bar chart */}
           <g transform="translate(15, 15)">
-            <rect x="0" y="22" width="10" height="18" rx="2" className="fill-foreground/[0.1]" />
-            <rect x="14" y="14" width="10" height="26" rx="2" className="fill-foreground/[0.14]" />
-            <rect x="28" y="18" width="10" height="22" rx="2" className="fill-foreground/[0.08]" />
-            <rect x="42" y="6" width="10" height="34" rx="2" className="fill-foreground/[0.18]">
-              <animate attributeName="opacity" values="0.18;0.28;0.18" dur="2s" repeatCount="indefinite" />
+            <rect x="0" y="22" width="10" height="18" rx="2" fill="#f59e0b" fillOpacity="0.2" />
+            <rect x="14" y="14" width="10" height="26" rx="2" fill="#f59e0b" fillOpacity="0.3" />
+            <rect x="28" y="18" width="10" height="22" rx="2" fill="#f59e0b" fillOpacity="0.15" />
+            <rect x="42" y="6" width="10" height="34" rx="2" fill="#f59e0b" fillOpacity="0.4">
+              <animate attributeName="fill-opacity" values="0.4;0.6;0.4" dur="2s" repeatCount="indefinite" />
             </rect>
-            <rect x="56" y="12" width="10" height="28" rx="2" className="fill-foreground/[0.12]" />
+            <rect x="56" y="12" width="10" height="28" rx="2" fill="#f59e0b" fillOpacity="0.25" />
           </g>
 
           {/* Label */}
@@ -282,7 +341,8 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             x="55"
             y="64"
             textAnchor="middle"
-            className="fill-foreground/25"
+            fill="#f59e0b"
+            fillOpacity="0.6"
             fontSize="7"
             fontFamily="ui-monospace, monospace"
           >
@@ -290,7 +350,7 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           </text>
         </g>
 
-        {/* === EVALUATION NODE (Bottom Right) === */}
+        {/* === EVALUATION NODE (Bottom Right) - Green === */}
         <g transform="translate(295, 255)" filter="url(#softShadow)">
           {/* Card */}
           <rect
@@ -299,16 +359,18 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
             width="100"
             height="55"
             rx="8"
-            fill="url(#cardGradient)"
-            className="stroke-foreground/[0.08]"
+            fill="url(#greenCardGradient)"
+            stroke="#10b981"
+            strokeOpacity="0.2"
             strokeWidth="1"
           />
 
           {/* Check circle */}
-          <circle cx="26" cy="24" r="12" className="fill-foreground/[0.08] stroke-foreground/[0.15]" strokeWidth="1" />
+          <circle cx="26" cy="24" r="12" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeOpacity="0.3" strokeWidth="1" />
           <path
             d="M 20 24 L 24 28 L 32 19"
-            className="stroke-foreground/30"
+            stroke="#10b981"
+            strokeOpacity="0.6"
             strokeWidth="2"
             fill="none"
             strokeLinecap="round"
@@ -316,16 +378,17 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           />
 
           {/* Score display */}
-          <text x="68" y="22" textAnchor="middle" className="fill-foreground/40" fontSize="11" fontWeight="600">0.94</text>
-          <rect x="48" y="28" width="36" height="3" rx="1.5" className="fill-foreground/[0.08]" />
-          <rect x="48" y="28" width="32" height="3" rx="1.5" className="fill-foreground/[0.15]" />
+          <text x="68" y="22" textAnchor="middle" fill="#10b981" fillOpacity="0.7" fontSize="11" fontWeight="600">0.94</text>
+          <rect x="48" y="28" width="36" height="3" rx="1.5" fill="#10b981" fillOpacity="0.15" />
+          <rect x="48" y="28" width="32" height="3" rx="1.5" fill="#10b981" fillOpacity="0.35" />
 
           {/* Label */}
           <text
             x="50"
             y="50"
             textAnchor="middle"
-            className="fill-foreground/25"
+            fill="#10b981"
+            fillOpacity="0.6"
             fontSize="7"
             fontFamily="ui-monospace, monospace"
           >
@@ -334,9 +397,9 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
         </g>
 
         {/* === ANIMATED DATA PARTICLES (following curved paths) === */}
-        {/* All particles uniform size r="2" */}
-        {/* Particle: Input to Hub - follows the curve path */}
-        <circle r="2" className="fill-foreground/30">
+        {/* All particles uniform size r="2.5", color-matched to their cards */}
+        {/* Particle: Input to Hub - Blue */}
+        <circle r="2.5" fill="#3b82f6">
           <animateMotion
             dur="3s"
             repeatCount="indefinite"
@@ -346,11 +409,11 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           >
             <mpath href="#pathInputToHub" />
           </animateMotion>
-          <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="fill-opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" />
         </circle>
 
-        {/* Particle: Output to Hub - follows the curve path */}
-        <circle r="2" className="fill-foreground/30">
+        {/* Particle: Output to Hub - Blue */}
+        <circle r="2.5" fill="#3b82f6">
           <animateMotion
             dur="3.2s"
             repeatCount="indefinite"
@@ -360,11 +423,11 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           >
             <mpath href="#pathOutputToHub" />
           </animateMotion>
-          <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.2s" repeatCount="indefinite" />
+          <animate attributeName="fill-opacity" values="0.4;0.8;0.4" dur="3.2s" repeatCount="indefinite" />
         </circle>
 
-        {/* Particle: Prompts to Hub - follows the curve path */}
-        <circle r="2" className="fill-foreground/30">
+        {/* Particle: Prompts to Hub - Purple */}
+        <circle r="2.5" fill="#8b5cf6">
           <animateMotion
             dur="3.5s"
             repeatCount="indefinite"
@@ -374,11 +437,11 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           >
             <mpath href="#pathPromptsToHub" />
           </animateMotion>
-          <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.5s" repeatCount="indefinite" />
+          <animate attributeName="fill-opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite" />
         </circle>
 
-        {/* Particle: Metrics to Hub - follows the curve path */}
-        <circle r="2" className="fill-foreground/30">
+        {/* Particle: Metrics to Hub - Amber */}
+        <circle r="2.5" fill="#f59e0b">
           <animateMotion
             dur="2.8s"
             repeatCount="indefinite"
@@ -388,11 +451,11 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           >
             <mpath href="#pathMetricsToHub" />
           </animateMotion>
-          <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2.8s" repeatCount="indefinite" />
+          <animate attributeName="fill-opacity" values="0.4;0.8;0.4" dur="2.8s" repeatCount="indefinite" />
         </circle>
 
-        {/* Particle: Evaluation to Hub - follows the curve path */}
-        <circle r="2" className="fill-foreground/30">
+        {/* Particle: Evaluation to Hub - Green */}
+        <circle r="2.5" fill="#10b981">
           <animateMotion
             dur="3.3s"
             repeatCount="indefinite"
@@ -402,7 +465,7 @@ export function IsometricIllustration({ className }: IsometricIllustrationProps)
           >
             <mpath href="#pathEvaluationToHub" />
           </animateMotion>
-          <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.3s" repeatCount="indefinite" />
+          <animate attributeName="fill-opacity" values="0.4;0.8;0.4" dur="3.3s" repeatCount="indefinite" />
         </circle>
 
         {/* === DECORATIVE DOTS === */}
