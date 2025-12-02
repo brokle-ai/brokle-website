@@ -173,3 +173,21 @@
 .prose code {
   @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
 }
+
+/* Marquee animation for logo bar */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
