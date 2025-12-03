@@ -3,45 +3,69 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, FileText, Shield, User } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
+import { DisplayHeading, SectionHeader, CTASection } from "@/components/shared"
 
 export default function PrivacyPolicyPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Privacy Policy</h1>
-            <p className="text-xl text-muted-foreground">
+      <section className="py-16 md:py-24 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <div className="max-w-3xl mx-auto text-center">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Legal</Badge>
+            <DisplayHeading as="h1" className="mb-6">Privacy Policy</DisplayHeading>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Learn how we collect, use, and protect your personal information.
             </p>
             <div className="flex justify-center gap-4 mt-6">
-              <Badge className="py-1 px-3 text-sm">Last Updated: March 1, 2025</Badge>
+              <Badge variant="outline" className="py-1 px-3 text-sm">Last Updated: March 1, 2025</Badge>
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* Key Points */}
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
-            <Card className="mb-8">
-              <CardContent className="pt-6">
-                <div className="grid md:grid-cols-3 gap-6 mb-6">
-                  <div className="flex flex-col items-center text-center p-4">
-                    <Shield className="h-10 w-10 text-primary mb-3" />
-                    <h3 className="font-medium mb-2">Data Protection</h3>
-                    <p className="text-sm text-muted-foreground">We use industry-standard security measures to protect your data</p>
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <Card className="text-center border-0 shadow-none bg-background">
+                <CardContent className="pt-6">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                    <Shield className="h-7 w-7" />
                   </div>
-                  <div className="flex flex-col items-center text-center p-4">
-                    <User className="h-10 w-10 text-primary mb-3" />
-                    <h3 className="font-medium mb-2">Your Rights</h3>
-                    <p className="text-sm text-muted-foreground">You maintain control over your personal information</p>
+                  <h3 className="font-semibold mb-2">Data Protection</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">We use industry-standard security measures to protect your data</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center border-0 shadow-none bg-background">
+                <CardContent className="pt-6">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                    <User className="h-7 w-7" />
                   </div>
-                  <div className="flex flex-col items-center text-center p-4">
-                    <FileText className="h-10 w-10 text-primary mb-3" />
-                    <h3 className="font-medium mb-2">Transparency</h3>
-                    <p className="text-sm text-muted-foreground">We clearly explain how your data is used</p>
+                  <h3 className="font-semibold mb-2">Your Rights</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">You maintain control over your personal information</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center border-0 shadow-none bg-background">
+                <CardContent className="pt-6">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                    <FileText className="h-7 w-7" />
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <h3 className="font-semibold mb-2">Transparency</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">We clearly explain how your data is used</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Policy Content */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <div className="max-w-4xl mx-auto">
 
             <div className="prose prose-lg max-w-none">
               <section className="mb-10">
@@ -167,16 +191,14 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-muted/50">
-        <div className="container px-4 mx-auto">
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge className="mb-4">Privacy FAQ</Badge>
-              <h2 className="text-3xl font-bold mb-4">Common Privacy Questions</h2>
-              <p className="text-xl text-muted-foreground">
-                Find answers to frequently asked questions about our privacy practices.
-              </p>
-            </div>
+            <SectionHeader
+              badge="Privacy FAQ"
+              title="Common Privacy Questions"
+              description="Find answers to frequently asked questions about our privacy practices."
+            />
 
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
@@ -219,24 +241,18 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Still Have Questions?</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Our privacy team is here to help with any questions about your personal information.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2">
-                Contact Privacy Team <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="gap-2">
-                View Terms of Service
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Still Have Questions?"
+        description="Our privacy team is here to help with any questions about your personal information."
+        primaryCTA={{
+          label: "Contact Privacy Team",
+          href: "mailto:privacy@brokle.ai",
+        }}
+        secondaryCTA={{
+          label: "View Terms of Service",
+          href: "/terms",
+        }}
+      />
     </>
   )
 }

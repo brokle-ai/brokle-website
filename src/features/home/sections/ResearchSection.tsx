@@ -27,7 +27,7 @@ const innovations = [
 export function ResearchSection() {
   return (
     <section className="py-20 md:py-28 lg:py-32">
-      <div className="container px-4 mx-auto max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20 items-start">
           {/* Left Column - Title */}
           <div>

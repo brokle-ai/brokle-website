@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Shield, Lock, Server, Eye, FileCheck, Users } from "lucide-react";
+import { ArrowRight, Shield, Lock, Server, Eye, FileCheck, Users, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { DisplayHeading, SectionHeader, CTASection, FeatureGrid } from "@/components/shared";
 
 export const metadata: Metadata = {
   title: "Security & Compliance - Brokle",
@@ -32,6 +33,11 @@ const certifications = [
     name: "HIPAA Ready",
     description: "BAA available for healthcare organizations. HIPAA-compliant data handling and storage.",
     icon: Lock,
+  },
+  {
+    name: "ISO 27001",
+    description: "Information security management system certified to international standards.",
+    icon: Shield,
   },
 ];
 
@@ -91,27 +97,27 @@ export default function SecurityPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-28">
-        <div className="container px-4 mx-auto">
+      <section className="py-16 md:py-24 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
               Security & Compliance
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <DisplayHeading as="h1" className="mb-6">
               Enterprise-grade{" "}
               <span className="text-primary">security</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            </DisplayHeading>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
               Your data security is our top priority. SOC 2 Type II certified, GDPR compliant,
               and HIPAA ready—or self-host for complete control.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2" asChild>
+              <Button size="lg" className="gap-2 h-12 px-8" asChild>
                 <Link href="/contact">
                   Talk to Security Team <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="h-12 px-8" asChild>
                 <Link href="https://docs.brokle.ai/security" target="_blank" rel="noopener noreferrer">
                   Security Documentation
                 </Link>
@@ -122,26 +128,25 @@ export default function SecurityPage() {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Compliance Certifications</h2>
-            <p className="text-lg text-muted-foreground">
-              Independently verified security and compliance.
-            </p>
-          </div>
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <SectionHeader
+            badge="Certifications"
+            title="Compliance Certifications"
+            description="Independently verified security and compliance standards."
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {certifications.map((cert) => (
               <Card key={cert.name} className="text-center bg-background border-0 shadow-none">
                 <CardHeader>
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
                     <cert.icon className="h-8 w-8" />
                   </div>
-                  <CardTitle className="text-xl">{cert.name}</CardTitle>
+                  <CardTitle className="text-lg">{cert.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{cert.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{cert.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -150,16 +155,15 @@ export default function SecurityPage() {
       </section>
 
       {/* Security Features Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Security Features</h2>
-            <p className="text-lg text-muted-foreground">
-              Built-in security for peace of mind.
-            </p>
-          </div>
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <SectionHeader
+            badge="Features"
+            title="Security Features"
+            description="Built-in security for peace of mind."
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {securityFeatures.map((feature) => (
               <Card key={feature.title} className="border-0 shadow-none bg-muted/30">
                 <CardContent className="p-6">
@@ -167,7 +171,7 @@ export default function SecurityPage() {
                     <feature.icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -176,21 +180,25 @@ export default function SecurityPage() {
       </section>
 
       {/* Security Practices Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Security Practices</h2>
-              <p className="text-lg text-muted-foreground">
-                Our commitment to operational security.
-              </p>
-            </div>
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <div className="max-w-5xl mx-auto">
+            <SectionHeader
+              badge="Practices"
+              title="Security Practices"
+              description="Our commitment to operational security."
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {practices.map((practice) => (
-                <div key={practice.title} className="p-6 bg-background rounded-lg">
-                  <h3 className="text-lg font-semibold mb-2">{practice.title}</h3>
-                  <p className="text-sm text-muted-foreground">{practice.description}</p>
+                <div key={practice.title} className="flex items-start gap-4 p-6 bg-background rounded-lg">
+                  <div className="mt-1 text-primary">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">{practice.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{practice.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -198,30 +206,72 @@ export default function SecurityPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Need more details?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Request our security questionnaire, penetration test report, or schedule a call
-              with our security team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2" asChild>
-                <Link href="/contact">
-                  Contact Security Team <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="https://trust.brokle.ai" target="_blank" rel="noopener noreferrer">
-                  Trust Center
-                </Link>
-              </Button>
+      {/* Self-Hosting Section */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+                  Self-Hosting
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Complete Data Control</h2>
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  For organizations with strict data requirements, Brokle can be self-hosted on your own
+                  infrastructure. Keep all traces, prompts, and analytics within your security perimeter.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span className="text-muted-foreground">Deploy on AWS, GCP, Azure, or on-premise</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span className="text-muted-foreground">Your data never leaves your network</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span className="text-muted-foreground">Same features as cloud, you control updates</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span className="text-muted-foreground">Air-gapped deployment options available</span>
+                  </li>
+                </ul>
+                <Button size="lg" variant="outline" asChild>
+                  <Link href="https://docs.brokle.ai/self-hosting" target="_blank" rel="noopener noreferrer">
+                    Self-Hosting Guide <ArrowRight className="h-4 w-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+              <div className="relative rounded-lg border bg-muted/30 overflow-hidden aspect-square">
+                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                  <div className="text-center">
+                    <Server className="h-16 w-16 mx-auto mb-4 opacity-50" />
+                    <p className="text-sm">Self-Hosted Deployment</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection
+        title="Need more details?"
+        description="Request our security questionnaire, penetration test report, or schedule a call with our security team."
+        primaryCTA={{
+          label: "Contact Security Team",
+          href: "/contact",
+        }}
+        secondaryCTA={{
+          label: "Trust Center",
+          href: "https://trust.brokle.ai",
+        }}
+        features={["SOC 2 Type II", "GDPR Compliant", "HIPAA Ready"]}
+        variant="muted"
+      />
     </>
   );
 }

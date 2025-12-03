@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Code, Boxes, Terminal } from "lucide-react";
 import Link from "next/link";
+import { DisplayHeading, SectionHeader, CTASection } from "@/components/shared";
 
 export const metadata: Metadata = {
   title: "Integrations - Brokle",
@@ -39,6 +40,11 @@ const providers = [
     docs: "https://docs.brokle.ai/integrations/azure",
   },
   {
+    name: "AWS Bedrock",
+    description: "Native support for Claude, Titan, and all Bedrock models.",
+    docs: "https://docs.brokle.ai/integrations/bedrock",
+  },
+  {
     name: "Cohere",
     description: "Native support for Command, Embed, and Rerank models.",
     docs: "https://docs.brokle.ai/integrations/cohere",
@@ -47,6 +53,16 @@ const providers = [
     name: "Mistral AI",
     description: "Integration with Mistral models including Mixtral.",
     docs: "https://docs.brokle.ai/integrations/mistral",
+  },
+  {
+    name: "Groq",
+    description: "High-speed inference tracing for Groq-hosted models.",
+    docs: "https://docs.brokle.ai/integrations/groq",
+  },
+  {
+    name: "Together AI",
+    description: "Open-source model hosting with full tracing support.",
+    docs: "https://docs.brokle.ai/integrations/together",
   },
 ];
 
@@ -89,18 +105,21 @@ const sdks = [
     install: "pip install brokle",
     description: "Full-featured Python SDK with async support, decorators, and automatic instrumentation.",
     docs: "https://docs.brokle.ai/sdk/python",
+    icon: Terminal,
   },
   {
     name: "TypeScript SDK",
     install: "npm install @brokle/sdk",
     description: "Modern TypeScript SDK with full type safety and framework integrations.",
     docs: "https://docs.brokle.ai/sdk/typescript",
+    icon: Code,
   },
   {
     name: "REST API",
     install: "OpenAPI 3.0",
     description: "RESTful API for custom integrations and any programming language.",
     docs: "https://docs.brokle.ai/api",
+    icon: Boxes,
   },
 ];
 
@@ -108,27 +127,27 @@ export default function IntegrationsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-28">
-        <div className="container px-4 mx-auto">
+      <section className="py-16 md:py-24 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
               Integrations
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <DisplayHeading as="h1" className="mb-6">
               Works with your{" "}
               <span className="text-primary">entire stack</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            </DisplayHeading>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
               Native integrations with every major LLM provider and framework.
               Add observability in minutes, not days.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2" asChild>
+              <Button size="lg" className="gap-2 h-12 px-8" asChild>
                 <Link href="https://app.brokle.ai/signup">
                   Get Started Free <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="h-12 px-8" asChild>
                 <Link href="https://docs.brokle.ai/integrations" target="_blank" rel="noopener noreferrer">
                   View All Integrations
                 </Link>
@@ -139,16 +158,15 @@ export default function IntegrationsPage() {
       </section>
 
       {/* Providers Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">LLM Providers</h2>
-            <p className="text-lg text-muted-foreground">
-              Automatic tracing for all major AI providers.
-            </p>
-          </div>
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <SectionHeader
+            badge="LLM Providers"
+            title="Every AI provider, one integration"
+            description="Automatic tracing for all major AI providers with real-time cost tracking."
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {providers.map((provider) => (
               <Card key={provider.name} className="border-0 shadow-none bg-background">
                 <CardHeader className="pb-2">
@@ -165,7 +183,7 @@ export default function IntegrationsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{provider.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{provider.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -174,16 +192,15 @@ export default function IntegrationsPage() {
       </section>
 
       {/* Frameworks Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Frameworks & Standards</h2>
-            <p className="text-lg text-muted-foreground">
-              First-class support for popular AI frameworks.
-            </p>
-          </div>
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <SectionHeader
+            badge="Frameworks"
+            title="First-class framework support"
+            description="Deep integration with popular AI frameworks for complete visibility into your pipelines."
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {frameworks.map((framework) => (
               <Card key={framework.name} className="border-0 shadow-none bg-muted/30">
                 <CardHeader className="pb-2">
@@ -200,7 +217,7 @@ export default function IntegrationsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{framework.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{framework.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -209,26 +226,28 @@ export default function IntegrationsPage() {
       </section>
 
       {/* SDKs Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Official SDKs</h2>
-            <p className="text-lg text-muted-foreground">
-              Full-featured SDKs for your favorite languages.
-            </p>
-          </div>
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
+          <SectionHeader
+            badge="SDKs"
+            title="Official SDKs"
+            description="Full-featured SDKs for your favorite languages with complete documentation."
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {sdks.map((sdk) => (
-              <Card key={sdk.name} className="bg-background">
+              <Card key={sdk.name} className="bg-background shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-lg">{sdk.name}</CardTitle>
-                  <code className="text-sm font-mono bg-muted px-2 py-1 rounded">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                    <sdk.icon className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-xl">{sdk.name}</CardTitle>
+                  <code className="text-sm font-mono bg-muted px-3 py-1.5 rounded inline-block">
                     {sdk.install}
                   </code>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{sdk.description}</p>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{sdk.description}</p>
                   <Button variant="outline" size="sm" asChild>
                     <Link href={sdk.docs} target="_blank" rel="noopener noreferrer">
                       View Docs <ExternalLink className="h-3 w-3 ml-1" />
@@ -242,29 +261,19 @@ export default function IntegrationsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Don&apos;t see your stack?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We support OpenTelemetry, so you can integrate with any language or framework.
-              Or reach out and let us know what you need.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2" asChild>
-                <Link href="https://docs.brokle.ai/integrations/opentelemetry" target="_blank" rel="noopener noreferrer">
-                  OpenTelemetry Guide <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/contact">
-                  Request Integration
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Don't see your stack?"
+        description="We support OpenTelemetry, so you can integrate with any language or framework. Or reach out and let us know what you need."
+        primaryCTA={{
+          label: "OpenTelemetry Guide",
+          href: "https://docs.brokle.ai/integrations/opentelemetry",
+        }}
+        secondaryCTA={{
+          label: "Request Integration",
+          href: "/contact",
+        }}
+        features={["OpenTelemetry native", "Custom instrumentation", "Any language"]}
+      />
     </>
   );
 }

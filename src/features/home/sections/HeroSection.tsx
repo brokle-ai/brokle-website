@@ -6,7 +6,7 @@ import { DisplayHeading, IsometricIllustration } from "@/components/shared"
 export function HeroSection() {
   return (
     <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
-      <div className="container px-4 mx-auto max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
           {/* Left side: Content */}
           <div className="text-left">

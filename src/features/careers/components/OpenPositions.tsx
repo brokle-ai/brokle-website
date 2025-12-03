@@ -92,7 +92,7 @@ export function OpenPositions() {
 
   return (
     <section id="open-positions" className="py-16">
-      <div className="container px-4 mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <Badge className="mb-4">Join Our Team</Badge>
