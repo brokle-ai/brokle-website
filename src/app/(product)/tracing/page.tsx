@@ -2,8 +2,24 @@ import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Search, Layers, Clock, Zap, Bug, LineChart } from "lucide-react";
+import {
+  ArrowRight,
+  Search,
+  Layers,
+  Clock,
+  Zap,
+  Bug,
+  LineChart,
+  Code,
+  Terminal,
+  GitBranch,
+  Cpu,
+  Database,
+  Workflow
+} from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { DisplayHeading, SectionHeader, CTASection, FeatureGrid, CodeBlock } from "@/components/shared";
 
 export const metadata: Metadata = {
   title: "Tracing & Debugging - Brokle",
@@ -50,62 +66,157 @@ const features = [
   },
 ];
 
+const useCases = [
+  {
+    icon: Terminal,
+    title: "Debug Chatbots",
+    description: "Understand conversation flow and identify where responses go wrong.",
+  },
+  {
+    icon: GitBranch,
+    title: "Track Agent Steps",
+    description: "See every decision your AI agent makes and why it chose each action.",
+  },
+  {
+    icon: Workflow,
+    title: "Optimize RAG Pipelines",
+    description: "Monitor retrieval quality and generation accuracy end-to-end.",
+  },
+];
+
+const integrations = [
+  { name: "OpenAI", logo: "/integrations/openai.svg" },
+  { name: "Anthropic", logo: "/integrations/anthropic.svg" },
+  { name: "LangChain", logo: "/integrations/langchain.svg" },
+  { name: "LlamaIndex", logo: "/integrations/llamaindex.svg" },
+  { name: "Vercel AI", logo: "/integrations/vercel.svg" },
+  { name: "OpenTelemetry", logo: "/integrations/opentelemetry.svg" },
+];
+
+const codeExample = `from brokle import Brokle
+
+brokle = Brokle()
+
+@brokle.trace()
+def chat_with_ai(message: str):
+    response = openai.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": message}]
+    )
+    return response.choices[0].message.content
+
+# All calls are automatically traced
+result = chat_with_ai("Hello, how are you?")`;
+
 export default function TracingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-28">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-              Tracing & Debugging
-            </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              See inside every{" "}
-              <span className="text-primary">LLM call</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Debug complex chains and agents with detailed traces. Understand exactly
-              what your LLM applications are doing, one span at a time.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2" asChild>
-                <Link href="https://app.brokle.ai/signup">
-                  Start Tracing Free <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="https://docs.brokle.ai/tracing" target="_blank" rel="noopener noreferrer">
-                  View Documentation
-                </Link>
-              </Button>
+      <section className="py-16 md:py-24 lg:py-28">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+                Tracing & Debugging
+              </Badge>
+              <DisplayHeading as="h1" className="mb-6">
+                See inside every{" "}
+                <span className="text-primary">LLM call</span>
+              </DisplayHeading>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+                Debug complex chains and agents with detailed traces. Understand exactly
+                what your LLM applications are doing, one span at a time.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="gap-2 h-12 px-8" asChild>
+                  <Link href="https://app.brokle.ai/signup">
+                    Start Tracing Free <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="h-12 px-8" asChild>
+                  <Link href="https://docs.brokle.ai/tracing" target="_blank" rel="noopener noreferrer">
+                    View Documentation
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Dashboard Preview Placeholder */}
+            <div className="relative rounded-lg border bg-muted/30 overflow-hidden aspect-[4/3]">
+              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                <div className="text-center">
+                  <Layers className="h-16 w-16 mx-auto mb-4 opacity-50" />
+                  <p className="text-sm">Trace Visualization Preview</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Integration Section */}
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeader
+                badge="Quick Start"
+                title="Add tracing in 5 minutes"
+                description="One decorator, zero configuration. Brokle automatically captures LLM calls, token usage, and latency."
+                centered={false}
+              />
+              <ul className="space-y-3 mt-6">
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-medium">1</div>
+                  <span className="text-muted-foreground">Install the SDK: <code className="text-sm bg-muted px-2 py-0.5 rounded">pip install brokle</code></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-medium">2</div>
+                  <span className="text-muted-foreground">Add the <code className="text-sm bg-muted px-2 py-0.5 rounded">@brokle.trace()</code> decorator</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-medium">3</div>
+                  <span className="text-muted-foreground">View traces in your dashboard</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <CodeBlock code={codeExample} language="python" title="app.py" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-muted/30">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Everything you need to debug LLMs
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Built on OpenTelemetry standards, designed for AI applications.
-            </p>
-          </div>
+      <section className="py-16 md:py-20">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <SectionHeader
+            badge="Features"
+            title="Everything you need to debug LLMs"
+            description="Built on OpenTelemetry standards, designed for AI applications."
+          />
+          <FeatureGrid features={features} columns={3} className="max-w-6xl mx-auto" />
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {features.map((feature) => (
-              <Card key={feature.title} className="border-0 shadow-none bg-background">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                    <feature.icon className="h-6 w-6" />
+      {/* Use Cases Section */}
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <SectionHeader
+            badge="Use Cases"
+            title="Built for modern AI applications"
+            description="From simple chatbots to complex multi-agent systems."
+          />
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {useCases.map((useCase) => (
+              <Card key={useCase.title} className="border-0 shadow-none bg-background">
+                <CardContent className="p-6 text-center">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                    <useCase.icon className="h-7 w-7" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">
-                    {feature.description}
+                  <h3 className="text-lg font-semibold mb-2">{useCase.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {useCase.description}
                   </p>
                 </CardContent>
               </Card>
@@ -114,22 +225,52 @@ export default function TracingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to debug your LLM apps?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Add tracing to your application in under 5 minutes. No code changes required.
-            </p>
-            <Button size="lg" className="gap-2" asChild>
-              <Link href="https://app.brokle.ai/signup">
-                Get Started Free <ArrowRight className="h-4 w-4" />
+      {/* Integrations Section */}
+      <section className="py-16 md:py-20">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <SectionHeader
+            badge="Integrations"
+            title="Works with your stack"
+            description="Native support for popular LLM providers and frameworks."
+          />
+          <div className="flex flex-wrap items-center justify-center gap-8 max-w-4xl mx-auto">
+            {integrations.map((integration) => (
+              <div
+                key={integration.name}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border bg-background"
+              >
+                <div className="w-8 h-8 rounded bg-muted flex items-center justify-center">
+                  <Code className="h-4 w-4 text-muted-foreground" />
+                </div>
+                <span className="text-sm font-medium">{integration.name}</span>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button variant="outline" asChild>
+              <Link href="/integrations">
+                View All Integrations <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection
+        title="Ready to debug your LLM apps?"
+        description="Add tracing to your application in under 5 minutes. No code changes required."
+        primaryCTA={{
+          label: "Get Started Free",
+          href: "https://app.brokle.ai/signup",
+        }}
+        secondaryCTA={{
+          label: "View Documentation",
+          href: "https://docs.brokle.ai/tracing",
+        }}
+        features={["No credit card required", "OpenTelemetry native", "Self-hosting available"]}
+        variant="muted"
+      />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Calendar, Clock, User } from "lucide-react"
 import Link from "next/link"
+import { DisplayHeading, CTASection } from "@/components/shared"
 
 const featuredPost = {
   title: "Introducing Brokle: Open-Source LLM Observability",
@@ -77,12 +78,12 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
+      <section className="py-16 md:py-24 lg:py-28">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Blog</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Insights & Updates</h1>
-            <p className="text-xl text-muted-foreground">
+            <DisplayHeading as="h1" className="mb-6">Insights & Updates</DisplayHeading>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Engineering insights, product updates, and best practices for building
               production LLM applications.
             </p>
@@ -91,8 +92,8 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Post */}
-      <section className="py-12 bg-muted/30">
-        <div className="container px-4 mx-auto">
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container px-4 mx-auto max-w-7xl">
           <div className="max-w-4xl mx-auto">
             <Card className="border-0 shadow-lg overflow-hidden">
               <div className="md:flex">
@@ -141,8 +142,8 @@ export default function BlogPage() {
 
       {/* Categories */}
       <section className="py-8">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-4xl mx-auto">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="max-w-5xl mx-auto">
             <div className="flex flex-wrap gap-2 justify-center">
               {categories.map((category) => (
                 <Button
@@ -159,9 +160,9 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-12">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-5xl mx-auto">
+      <section className="py-16 md:py-20">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogPosts.map((post) => (
                 <Card key={post.title} className="border-0 shadow-none bg-muted/30 hover:bg-muted/50 transition-colors">
@@ -204,48 +205,38 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container px-4 mx-auto max-w-7xl">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-muted-foreground mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h2>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
               Get the latest posts delivered straight to your inbox. No spam, unsubscribe anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-md border bg-background"
+                className="flex-1 px-4 py-3 rounded-md border bg-background h-12"
               />
-              <Button>Subscribe</Button>
+              <Button className="h-12 px-8">Subscribe</Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Try Brokle free and see what&apos;s happening inside your LLM applications.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2" asChild>
-                <Link href="https://app.brokle.ai/signup">
-                  Start Free <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="https://docs.brokle.ai" target="_blank" rel="noopener noreferrer">
-                  Read the Docs
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to Get Started?"
+        description="Try Brokle free and see what's happening inside your LLM applications."
+        primaryCTA={{
+          label: "Start Free",
+          href: "https://app.brokle.ai/signup",
+        }}
+        secondaryCTA={{
+          label: "Read the Docs",
+          href: "https://docs.brokle.ai",
+        }}
+      />
     </>
   )
 }

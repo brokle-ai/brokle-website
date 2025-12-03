@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Bug, Github, Lightbulb, Settings, Zap } from "lucide-react"
+import { ArrowRight, Bug, Github, Lightbulb, Settings, Sparkles } from "lucide-react"
 import Link from "next/link"
+import { DisplayHeading, SectionHeader, CTASection } from "@/components/shared"
 
 export default function ChangelogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
+      <section className="py-16 md:py-24 lg:py-28">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Product Updates</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Changelog</h1>
-            <p className="text-xl text-muted-foreground">
+            <DisplayHeading as="h1" className="mb-6">Changelog</DisplayHeading>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Stay up to date with the latest features, improvements, and fixes in Brokle.
             </p>
           </div>
@@ -21,9 +22,9 @@ export default function ChangelogPage() {
       </section>
 
       {/* Latest Release */}
-      <section className="py-12 bg-muted/30">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto">
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-between mb-8">
               <div>
                 <Badge variant="outline" className="mb-2">
@@ -43,7 +44,7 @@ export default function ChangelogPage() {
             <Card className="mb-8 border-0 shadow-none bg-background">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Zap className="h-5 w-5 text-primary" />
+                  <Sparkles className="h-5 w-5 text-primary" />
                   <CardTitle>New Features</CardTitle>
                 </div>
               </CardHeader>
@@ -143,10 +144,10 @@ export default function ChangelogPage() {
       </section>
 
       {/* Previous Releases */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8">Previous Releases</h2>
+      <section className="py-16 md:py-20">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">Previous Releases</h2>
 
             <div className="space-y-12">
               {/* Version 2.4.0 */}
@@ -166,7 +167,7 @@ export default function ChangelogPage() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="mt-1">
-                      <Zap className="h-5 w-5 text-primary" />
+                      <Sparkles className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <span className="font-medium">Custom Evaluators</span>
@@ -219,7 +220,7 @@ export default function ChangelogPage() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="mt-1">
-                      <Zap className="h-5 w-5 text-primary" />
+                      <Sparkles className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <span className="font-medium">Prompt Version Comparison</span>
@@ -272,7 +273,7 @@ export default function ChangelogPage() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="mt-1">
-                      <Zap className="h-5 w-5 text-primary" />
+                      <Sparkles className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <span className="font-medium">OpenTelemetry Native</span>
@@ -321,16 +322,14 @@ export default function ChangelogPage() {
       </section>
 
       {/* Roadmap */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Coming Soon</Badge>
-              <h2 className="text-3xl font-bold mb-4">Product Roadmap</h2>
-              <p className="text-xl text-muted-foreground">
-                See what we&apos;re working on next. Have a feature request? Let us know!
-              </p>
-            </div>
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader
+              badge="Coming Soon"
+              title="Product Roadmap"
+              description="See what we're working on next. Have a feature request? Let us know!"
+            />
 
             <div className="space-y-6">
               <Card className="border-0 shadow-none bg-background">
@@ -398,7 +397,7 @@ export default function ChangelogPage() {
 
             <div className="mt-8 text-center">
               <p className="text-muted-foreground mb-4">Have a feature request? We&apos;d love to hear from you!</p>
-              <Button asChild>
+              <Button className="h-12 px-8" asChild>
                 <Link href="https://github.com/brokle-ai/brokle/discussions" target="_blank" rel="noopener noreferrer">
                   Submit Feature Request
                 </Link>
@@ -408,23 +407,19 @@ export default function ChangelogPage() {
         </div>
       </section>
 
-      {/* Subscribe */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Follow our GitHub repository to get notified about new releases.
-            </p>
-            <Button variant="outline" className="gap-2" asChild>
-              <Link href="https://github.com/brokle-ai/brokle" target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4" />
-                Watch on GitHub
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* CTA Section */}
+      <CTASection
+        title="Stay Updated"
+        description="Follow our GitHub repository to get notified about new releases and features."
+        primaryCTA={{
+          label: "Watch on GitHub",
+          href: "https://github.com/brokle-ai/brokle",
+        }}
+        secondaryCTA={{
+          label: "Join Discord",
+          href: "https://discord.gg/brokle",
+        }}
+      />
     </>
   )
 }
