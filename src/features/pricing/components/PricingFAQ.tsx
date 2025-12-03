@@ -10,7 +10,7 @@ import { SectionHeader } from "@/components/shared"
 export default function PricingFAQ() {
   return (
     <section className="py-16 md:py-20">
-      <div className="container px-4 mx-auto max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className="max-w-3xl mx-auto">
           <SectionHeader
             badge="FAQ"

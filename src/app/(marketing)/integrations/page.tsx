@@ -128,7 +128,7 @@ export default function IntegrationsPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
               Integrations
@@ -159,7 +159,7 @@ export default function IntegrationsPage() {
 
       {/* Providers Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="LLM Providers"
             title="Every AI provider, one integration"
@@ -193,7 +193,7 @@ export default function IntegrationsPage() {
 
       {/* Frameworks Section */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Frameworks"
             title="First-class framework support"
@@ -227,7 +227,7 @@ export default function IntegrationsPage() {
 
       {/* SDKs Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="SDKs"
             title="Official SDKs"

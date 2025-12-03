@@ -115,7 +115,7 @@ export default function PromptManagementPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
@@ -158,7 +158,7 @@ export default function PromptManagementPage() {
 
       {/* Quick Integration Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeader
@@ -191,7 +191,7 @@ export default function PromptManagementPage() {
 
       {/* Features Grid */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Features"
             title="Prompts as a first-class citizen"
@@ -203,7 +203,7 @@ export default function PromptManagementPage() {
 
       {/* Use Cases Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Use Cases"
             title="Built for production workflows"
@@ -229,7 +229,7 @@ export default function PromptManagementPage() {
 
       {/* Integrations Section */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Integrations"
             title="Works with any LLM"

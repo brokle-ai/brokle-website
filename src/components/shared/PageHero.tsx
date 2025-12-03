@@ -37,7 +37,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className={cn("py-16 md:py-24 lg:py-28", className)}>
-      <div className="container px-4 mx-auto max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className={cn("max-w-4xl", centered && "mx-auto text-center")}>
           {badge && (
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">

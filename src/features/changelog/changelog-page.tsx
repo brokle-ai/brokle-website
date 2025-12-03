@@ -10,7 +10,7 @@ export default function ChangelogPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Product Updates</Badge>
             <DisplayHeading as="h1" className="mb-6">Changelog</DisplayHeading>
@@ -23,7 +23,7 @@ export default function ChangelogPage() {
 
       {/* Latest Release */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-between mb-8">
               <div>
@@ -145,7 +145,7 @@ export default function ChangelogPage() {
 
       {/* Previous Releases */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-8">Previous Releases</h2>
 
@@ -323,7 +323,7 @@ export default function ChangelogPage() {
 
       {/* Roadmap */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
               badge="Coming Soon"

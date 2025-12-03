@@ -98,7 +98,7 @@ export default function SecurityPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
               Security & Compliance
@@ -129,7 +129,7 @@ export default function SecurityPage() {
 
       {/* Certifications Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Certifications"
             title="Compliance Certifications"
@@ -156,7 +156,7 @@ export default function SecurityPage() {
 
       {/* Security Features Section */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Features"
             title="Security Features"
@@ -181,7 +181,7 @@ export default function SecurityPage() {
 
       {/* Security Practices Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-5xl mx-auto">
             <SectionHeader
               badge="Practices"
@@ -208,7 +208,7 @@ export default function SecurityPage() {
 
       {/* Self-Hosting Section */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>

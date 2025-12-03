@@ -79,7 +79,7 @@ export default function BlogPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Blog</Badge>
             <DisplayHeading as="h1" className="mb-6">Insights & Updates</DisplayHeading>
@@ -93,7 +93,7 @@ export default function BlogPage() {
 
       {/* Featured Post */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
             <Card className="border-0 shadow-lg overflow-hidden">
               <div className="md:flex">
@@ -142,7 +142,7 @@ export default function BlogPage() {
 
       {/* Categories */}
       <section className="py-8">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-wrap gap-2 justify-center">
               {categories.map((category) => (
@@ -161,7 +161,7 @@ export default function BlogPage() {
 
       {/* Blog Posts Grid */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogPosts.map((post) => (
@@ -206,7 +206,7 @@ export default function BlogPage() {
 
       {/* Newsletter */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">

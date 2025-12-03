@@ -5,7 +5,7 @@ import { ArrowRight, Users } from "lucide-react"
 export function CareersHero() {
   return (
     <section className="py-16 md:py-24">
-      <div className="container px-4 mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <Badge className="mb-4">Careers</Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Team & Shape the Future!</h1>

@@ -22,7 +22,7 @@ export default function ContactPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Contact Us</Badge>
             <DisplayHeading as="h1" className="mb-6">Get in Touch</DisplayHeading>
@@ -36,7 +36,7 @@ export default function ContactPage() {
 
       {/* Contact Options */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="text-center border-0 shadow-none bg-muted/30">
               <CardHeader>
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
             <div>
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Message Us</Badge>
@@ -169,7 +169,7 @@ export default function ContactPage() {
 
       {/* FAQ */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto">
             <SectionHeader
               badge="FAQ"

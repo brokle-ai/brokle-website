@@ -10,7 +10,7 @@ export function TestimonialsSection() {
     <>
       {/* Employee Testimonials */}
       <section className="py-16">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12">
               <h3 className="text-2xl font-bold mb-6 text-center">Meet Our Team</h3>
@@ -69,7 +69,7 @@ export function TestimonialsSection() {
 
       {/* Stay Connected */}
       <section className="py-16">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="mb-4">Stay Connected</Badge>
@@ -114,7 +114,7 @@ export function TestimonialsSection() {
 
       {/* FAQs & Contact */}
       <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="mb-4">FAQs</Badge>
@@ -186,7 +186,7 @@ export function TestimonialsSection() {
 
       {/* Final CTA */}
       <section className="py-16">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Join Our Team?</h2>
             <p className="text-xl text-muted-foreground mb-8">

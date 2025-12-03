@@ -79,7 +79,7 @@ export default function CareersPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">We're Hiring</Badge>
             <DisplayHeading as="h1" className="mb-6">Join Our Team</DisplayHeading>
@@ -93,7 +93,7 @@ export default function CareersPage() {
 
       {/* Company Values */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Values"
             title="Our Values"
@@ -122,7 +122,7 @@ export default function CareersPage() {
 
       {/* Open Positions */}
       <section className="py-16 md:py-20" id="positions">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
               badge="Positions"
@@ -181,7 +181,7 @@ export default function CareersPage() {
 
       {/* Benefits */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-5xl mx-auto">
             <SectionHeader
               badge="Benefits"
@@ -203,7 +203,7 @@ export default function CareersPage() {
 
       {/* Team Section */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>

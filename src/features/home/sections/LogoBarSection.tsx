@@ -34,7 +34,7 @@ export function LogoBarSection() {
 
   return (
     <section className="py-12 md:py-16 border-t overflow-hidden">
-      <div className="container px-4 mx-auto max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <p className="text-center text-sm text-muted-foreground mb-8">
           Trusted by AI teams at leading companies
         </p>

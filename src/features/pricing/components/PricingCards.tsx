@@ -13,7 +13,7 @@ export default function PricingCards() {
     <>
       {/* Pricing Cards */}
       <section className="py-12">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-6xl mx-auto">
             <Tabs defaultValue="monthly" className="w-full">
               <div className="flex justify-center mb-8">
@@ -129,7 +129,7 @@ export default function PricingCards() {
 
       {/* Add-ons Section */}
       <section className="py-16 bg-muted/30">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Add-ons</Badge>
             <h2 className="text-3xl font-bold mb-4">Scale as you need</h2>

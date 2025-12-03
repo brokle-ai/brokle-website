@@ -11,7 +11,7 @@ export default function TermsOfServicePage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Legal</Badge>
             <DisplayHeading as="h1" className="mb-6">Terms of Service</DisplayHeading>
@@ -27,7 +27,7 @@ export default function TermsOfServicePage() {
 
       {/* Key Points */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <Card className="text-center border-0 shadow-none bg-background">
@@ -64,7 +64,7 @@ export default function TermsOfServicePage() {
 
       {/* Terms Content */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-4xl mx-auto">
 
             <div className="prose prose-lg max-w-none">
@@ -222,7 +222,7 @@ export default function TermsOfServicePage() {
 
       {/* FAQ Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto">
             <SectionHeader
               badge="Legal FAQ"

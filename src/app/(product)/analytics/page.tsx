@@ -114,7 +114,7 @@ export default function AnalyticsPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
@@ -157,7 +157,7 @@ export default function AnalyticsPage() {
 
       {/* Quick Integration Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeader
@@ -190,7 +190,7 @@ export default function AnalyticsPage() {
 
       {/* Features Grid */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Features"
             title="Complete visibility into LLM costs"
@@ -202,7 +202,7 @@ export default function AnalyticsPage() {
 
       {/* Use Cases Section */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Use Cases"
             title="Optimize your AI economics"
@@ -228,7 +228,7 @@ export default function AnalyticsPage() {
 
       {/* Integrations Section */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Providers"
             title="Track costs across all providers"

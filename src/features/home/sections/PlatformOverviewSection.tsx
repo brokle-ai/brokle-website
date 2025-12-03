@@ -26,7 +26,7 @@ const platforms = [
 export function PlatformOverviewSection() {
   return (
     <section className="py-20 md:py-28 lg:py-32 border-t">
-      <div className="container px-4 mx-auto max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         {/* Section Header */}
         <div className="text-center mb-16">
           <DisplayHeading as="h2" className="mb-4">

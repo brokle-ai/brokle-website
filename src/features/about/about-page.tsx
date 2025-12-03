@@ -10,7 +10,7 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-28">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Our Story</Badge>
             <DisplayHeading as="h1" className="mb-6">About Brokle</DisplayHeading>
@@ -24,7 +24,7 @@ export default function AboutPage() {
 
       {/* Mission & Vision */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div>
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Our Mission</Badge>
@@ -79,7 +79,7 @@ export default function AboutPage() {
 
       {/* Our Values */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Our Values"
             title="What We Stand For"
@@ -137,7 +137,7 @@ export default function AboutPage() {
 
       {/* Why We Built Brokle */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Our Journey</Badge>
@@ -172,7 +172,7 @@ export default function AboutPage() {
 
       {/* Open Source Stats */}
       <section className="py-16 md:py-20">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <SectionHeader
             badge="Open Source"
             title="Built in the Open"
@@ -207,7 +207,7 @@ export default function AboutPage() {
 
       {/* Join the Community */}
       <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container px-4 mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Community</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Community</h2>

@@ -102,7 +102,7 @@ export default function NavbarContent({ isScrolled }: NavbarContentProps) {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12 xl:px-16 max-w-[1400px]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">

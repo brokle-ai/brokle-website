@@ -34,7 +34,7 @@ export function CTASection({
       variant === "muted" && "bg-muted/30",
       className
     )}>
-      <div className="container px-4 mx-auto max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 max-w-[1600px]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
             {title}
